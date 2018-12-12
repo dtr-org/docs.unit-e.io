@@ -1,0 +1,29 @@
+language: python
+sudo: false
+cache: pip
+install: pip install sphinx
+script: make html
+
+Defaults: &s3defaults
+  provider: s3
+  skip_cleanup: true
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: $AWS_BUCKET
+  local-dir: _build/html
+  acl: private
+  on:
+    repo: dtr-org/docs.unit-e.io
+
+deploy:
+  <<: *s3defaults
+  on:
+    branch: master
+
+# uncomment for testing deployment from a custom branch
+# deploy:
+#   <<: *s3defaults
+#   upload-dir: $TRAVIS_COMMIT
+#   on:
+#     repo: dtr-org/docs.unit-e.io
+#     branch: master
