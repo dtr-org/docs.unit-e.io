@@ -1,5 +1,7 @@
 # docs.unit-e.io
 
+[![Build Status](https://travis-ci.com/dtr-org/docs.unit-e.io.svg?token=bm5dxUvwqj2MkNmT6JSA&branch=master)](https://travis-ci.com/dtr-org/docs.unit-e.io)
+
 These are the sources for the documentation at https://docs.unit-e.io.
 
 Contributions are welcome. See our [contribution guidelines](CONTRIBUTING.md)
