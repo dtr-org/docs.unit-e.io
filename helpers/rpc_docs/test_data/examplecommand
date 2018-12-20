@@ -1,0 +1,48 @@
+examplecommand "arg" "object" ( "optional-arg" )
+
+Returns the hash of the best (tip) block in the longest blockchain.
+
+Arguments:
+1. "arg"     (string, required) An argument.
+2. "otherarg"     (string, required) Line one
+                                     line two
+3. "object"  (array, required) Some data
+  [     (array of json objects)
+    {
+      "key": "value", (type) desc
+    }
+  ,...
+  ]
+4. "optional-arg" (string, optional) An optional argument.
+5. options                 (json, optional)
+  {
+     "rescan": <false>, (xx) yy
+  }
+6. commands    (required) list of commands to send:
+                          {'cmd': 'END_PERMISSIONING'}
+                          {'cmd': 'ADD_TO_WHITELIST', 'payload': <keys>}
+7. "inputs"                (array) A json array
+     [
+       {
+         "txid":"id",    (s) id
+                             [vout_index,...]
+       }
+       ,...
+     ]
+8. "outputs"               (object) a json object
+    {
+      "address": x.xxx,    (ns) a
+      "data": "hex"      (s) data
+      ,...
+    }
+
+Note: This call can take minutes to complete if rescan is true, during that time, other rpc calls
+may report that the imported keys, addresses or scripts exists but related transactions are still missing.
+
+Result:
+"hex"      (string) the block hash hex encoded
+
+Examples:
+> unite-cli examplecommand foo
+> curl --user myusername --data-binary someargs
+

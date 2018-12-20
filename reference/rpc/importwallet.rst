@@ -1,0 +1,33 @@
+.. Copyright (c) 2018 The Unit-e developers
+   Distributed under the MIT software license, see the accompanying
+   file LICENSE or https://opensource.org/licenses/MIT.
+
+importwallet
+------------
+
+``importwallet "filename"``
+
+Imports keys from a wallet dump file (see dumpwallet). Requires a new wallet backup to include imported keys.
+
+Argument #1 - filename
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Type:** string, required
+
+The wallet file
+
+Examples
+~~~~~~~~
+
+Dump the wallet::
+
+  unite-cli dumpwallet "test"
+
+Import the wallet::
+
+  unite-cli importwallet "test"
+
+Import using the json rpc call::
+
+  curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "importwallet", "params": ["test"] }' -H 'content-type: text/plain;' http://127.0.0.1:7181/
+

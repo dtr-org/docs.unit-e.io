@@ -38,6 +38,11 @@ Reference
 
 Reference documentation of formats, protocols, APIs.
 
+.. toctree::
+   :maxdepth: 1
+
+   reference/rpc/index
+
 Examples
 --------
 

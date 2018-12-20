@@ -1,0 +1,28 @@
+``getbestblockhash``
+
+Returns the hash of the best (tip) block in the longest blockchain.
+
+Result
+~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+   * - hex
+     - string
+     - the block hash hex encoded
+
+Examples
+~~~~~~~~
+
+::
+
+  unite-cli getbestblockhash
+
+::
+
+  curl --user myusername --data-binary someargs
+

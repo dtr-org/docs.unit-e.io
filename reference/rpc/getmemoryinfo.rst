@@ -1,0 +1,38 @@
+.. Copyright (c) 2018 The Unit-e developers
+   Distributed under the MIT software license, see the accompanying
+   file LICENSE or https://opensource.org/licenses/MIT.
+
+getmemoryinfo
+-------------
+
+``getmemoryinfo ("mode")``
+
+Returns an object containing information about memory usage.
+
+Result (mode "stats")
+~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  {
+    "locked": {               (json object) Information about locked memory manager
+      "used": xxxxx,          (numeric) Number of bytes used
+      "free": xxxxx,          (numeric) Number of bytes available in current arenas
+      "total": xxxxxxx,       (numeric) Total number of bytes managed
+      "locked": xxxxxx,       (numeric) Amount of bytes that succeeded locking. If this number is smaller than total, locking pages failed at some point and key data could be swapped to disk.
+      "chunks_used": xxxxx,   (numeric) Number allocated chunks
+      "chunks_free": xxxxx,   (numeric) Number unused chunks
+    }
+  }
+
+Examples
+~~~~~~~~
+
+::
+
+  unite-cli getmemoryinfo
+
+::
+
+  curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmemoryinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:7181/
+

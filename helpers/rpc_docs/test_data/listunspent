@@ -1,0 +1,22 @@
+listunspent ( minconf maxconf  ["addresses",...] [include_unsafe] [query_options])
+
+Returns array of unspent transaction outputs
+with between minconf and maxconf (inclusive) confirmations.
+Optionally filter to only include txouts paid to specified addresses.
+
+Arguments:
+1. minconf          (numeric, optional, default=1) The minimum confirmations to filter
+
+Result
+[                   (array of json object)
+  {
+    "txid" : "txid",          (string) the transaction id
+    "safe" : xxx              (bool) Whether this output is considered safe to spend. Unconfirmed transactions
+                              from outside keys and unconfirmed replacement transactions are considered unsafe
+                              and are not eligible for spending by fundrawtransaction and sendtoaddress.
+  }
+  ,...
+]
+
+Examples
+> unite-cli listunspent
