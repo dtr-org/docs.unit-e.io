@@ -13,7 +13,7 @@ def test_process_command_help():
     for cmd in ['getbestblockhash', 'calcsnapshothash', 'getblockchaininfo',
                 'listsnapshots', 'getblock', 'getbalance', 'bumpfee',
                 'getchaintips', 'getmempoolancestors', 'preciousblock',
-                'importmulti', 'listunspent', 'examplecommand2']:
+                'importmulti', 'listunspent', 'examplecommand2', 'estimatefee']:
         with open(test_data_dir / cmd) as file:
             input = file.read()
         with open(test_data_dir / (cmd + ".expected")) as file:
@@ -100,7 +100,6 @@ def test_parse_help_result_with_quotes():
 def test_parse_help_result_without_quotes():
     assert HelpParser().parse_help_result('hex      (string) the block hash hex encoded') == {
         'format': 'table', 'name': 'hex', 'type': 'string', 'description': 'the block hash hex encoded'}
-
 
 def test_parse_help_argument_with_quotes():
     assert HelpParser().parse_help_argument('1. "inputs" (hex, required) serialized UTXOs to subtract.') == {

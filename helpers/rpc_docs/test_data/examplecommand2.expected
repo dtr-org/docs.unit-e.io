@@ -53,6 +53,26 @@ Result (for verbose=true)
     }, ...
   }
 
+Result (mode "mallocinfo")
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  "<malloc version="1">..."
+
+Result (DEPRECATED. To see this result in v0.16 instead, please start united with -deprecatedrpc=addmultisigaddress).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Name
+     - Type
+     - Description
+   * - address
+     - string
+     - A unite address associated with the keys.
+
 Examples
 ~~~~~~~~
 

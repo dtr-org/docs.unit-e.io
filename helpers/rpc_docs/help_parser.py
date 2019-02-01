@@ -6,13 +6,13 @@
 import re
 from enum import Enum
 
+SECTION = Enum(
+        'Section', 'command description result literal_result past_result '
+                   'arguments literal_argument examples')
 
 class HelpParser:
     '''A parser for the unit-e rpc command line help'''
 
-    Section = Enum(
-        'Section', 'command description result literal_result arguments '
-                   'literal_argument examples')
 
     def __init__(self):
         self.json_level = 0
@@ -46,13 +46,13 @@ class HelpParser:
         previous_section = self.section
         result_match = re.match(r'^Result:?([^:]*):?$', line)
         if result_match and (':' in line or line == 'Result' or line.startswith('Result (')):
-            self.section = self.Section.result
+            self.section = SECTION.result
             help_data['results'].append(
                 {'title_extension': result_match.group(1)})
         elif line == "Arguments:":
-            self.section = self.Section.arguments
-        elif re.match(r'Examples:?', line):
-            self.section = self.Section.examples
+            self.section = SECTION.arguments
+        elif re.match(r'Examples?:?', line):
+            self.section = SECTION.examples
         return previous_section != self.section
 
     def check_opening_json(self, line):
@@ -74,7 +74,7 @@ class HelpParser:
                     return
 
     def parse_help(self, help_text):
-        self.section = self.Section.command
+        self.section = SECTION.command
         help_data = {
             "command": "",
             "description": "",
@@ -85,18 +85,18 @@ class HelpParser:
         for line in help_text.splitlines():
             # print("LINE (" + self.section.name + ") " + line)
 
-            if self.section == self.Section.command:
+            if self.section == SECTION.command:
                 help_data['command'] = line.rstrip()
-                self.section = self.Section.description
+                self.section = SECTION.description
 
-            elif self.section == self.Section.description:
+            elif self.section == SECTION.description:
                 if not self.next_section(line, help_data):
                     if line:
                         if help_data["description"] and help_data["description"][-2] in ['.', ':']:
                             help_data["description"] += '\n'
                         help_data["description"] += line.rstrip() + '\n'
 
-            elif self.section == self.Section.arguments:
+            elif self.section == SECTION.arguments:
                 if not self.next_section(line, help_data):
                     if line:
                         argument = self.parse_help_argument(line)
@@ -109,43 +109,50 @@ class HelpParser:
                                     self.check_opening_json(line)
                                     if self.json_level > 0:
                                         last_argument['literal_description'] = line + '\n'
-                                        self.section = self.Section.literal_argument
+                                        self.section = SECTION.literal_argument
                                     else:
                                         if line.startswith(' '):
                                             if last_argument['description']:
                                                 last_argument['description'] += '\n       '
                                             last_argument['description'] += line.lstrip()
 
-            elif self.section == self.Section.literal_argument:
+            elif self.section == SECTION.literal_argument:
                 last_argument = help_data['arguments'][-1]
                 last_argument['literal_description'] += line + '\n'
                 self.check_opening_json(line)
                 if re.match(r"^ *[\]}]", line):
                     self.json_level -= 1
                     if self.json_level == 0:
-                        self.section = self.Section.arguments
+                        self.section = SECTION.arguments
 
-            elif self.section == self.Section.result:
+            elif self.section == SECTION.result:
                 if not self.next_section(line, help_data):
                     if line.startswith("{") or line.startswith("["):
-                        self.section = self.Section.literal_result
+                        self.section = SECTION.literal_result
                         result_data = help_data['results'][-1]
                         result_data.update(
                             {'format': 'literal', 'text': '  ' + line + '\n'})
                     else:
-                        if line:
+                        if line and not line.startswith(" "):
                             result_data_line = self.parse_help_result(line)
+                            result_data = help_data['results'][-1]
                             if result_data_line:
-                                result_data = help_data['results'][-1]
                                 result_data.update(result_data_line)
+                            else:
+                                result_data.update(
+                                    {'format': 'literal', 'text': '  ' + line + '\n'})
+                            self.section = SECTION.past_result
 
-            elif self.section == self.Section.literal_result:
+            elif self.section == SECTION.literal_result:
                 last_result = help_data['results'][-1]
                 last_result['text'] += '  ' + line.rstrip() + '\n'
                 if line == "}" or line == ']':
-                    self.section = self.Section.result
+                    self.section = SECTION.past_result
 
-            elif self.section == self.Section.examples:
+            elif self.section == SECTION.past_result:
+                self.next_section(line, help_data)
+
+            elif self.section == SECTION.examples:
                 if line:
                     help_data["examples"].append(line)
 

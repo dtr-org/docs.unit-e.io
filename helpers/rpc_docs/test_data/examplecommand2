@@ -35,6 +35,13 @@ Result: (for verbose=true)
   }, ...
 }
 
+Result (mode "mallocinfo"):
+"<malloc version="1">..."
+
+Result (DEPRECATED. To see this result in v0.16 instead, please start united with -deprecatedrpc=addmultisigaddress).
+        clients should transition to the new output api before upgrading to v0.17.
+"address"                         (string) A unite address associated with the keys.
+
 Examples:
 > unite-cli getmempoolancestors "mytxid"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getmempoolancestors", "params": ["mytxid"] }' -H 'content-type: text/plain;' http://127.0.0.1:7181/

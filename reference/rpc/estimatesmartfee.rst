@@ -45,3 +45,10 @@ Result
     "blocks" : n         (numeric) block number where estimate was found
   }
 
+Examples
+~~~~~~~~
+
+::
+
+  unite-cli estimatesmartfee 6
+

@@ -25,6 +25,13 @@ Result (mode "stats")
     }
   }
 
+Result (mode "mallocinfo")
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+  "<malloc version="1">..."
+
 Examples
 ~~~~~~~~
 
