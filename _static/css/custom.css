@@ -1,0 +1,39 @@
+.wy-nav-content-wrap {
+  background: white;
+}
+
+.wy-side-nav-search, .wy-nav-top {
+  background: white;
+}
+
+.wy-side-nav-search>a, .wy-side-nav-search .wy-dropdown>a {
+  color: #404040;
+}
+
+.wy-menu-vertical a {
+  color: #404040;
+}
+
+.wy-menu-vertical a:hover {
+  background-color: rgb(220, 220, 220);
+}
+
+.wy-nav-side {
+  background: white;
+}
+
+h2 {
+  border-bottom: 1px solid #eee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+}
+
+footer {
+  font-size: 12px;
+}
+
+footer p {
+  font-size: 12px;
+}

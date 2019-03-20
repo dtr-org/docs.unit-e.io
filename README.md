@@ -14,9 +14,9 @@ conduct](CODE_OF_CONDUCT.md).
 ## Generating the documentation
 
 The documentation is generated with [Sphinx](http://www.sphinx-doc.org). Install
-Sphinx with something like `pip install sphinx` and run `make html` to generate
-the web site. It's all static HTML. You can browse it locally in the
-`_build/html` directory.
+Sphinx and the required theme with something like
+`pip3 install -r requirements.txt` and run `make html` to generate the web site.
+It's all static HTML. You can browse it locally in the `_build/html` directory.
 
 ## License
 

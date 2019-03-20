@@ -1,7 +1,6 @@
 language: python
 sudo: false
 cache: pip
-install: pip install sphinx
 script: make html
 
 Defaults: &s3defaults
