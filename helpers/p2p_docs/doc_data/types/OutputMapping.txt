@@ -1,0 +1,12 @@
+
+\startformat
+index
+uint32
+Output index
+
+txout
+TxOut
+Actual output
+\endformat
+
+\copyright unit-e

@@ -1,0 +1,20 @@
+Network IP address with additional time information.
+
+\startformat
+time
+uint32
+A time in [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) format. Nodes advertising their own IP address set this to the current time. Nodes advertising IP addresses they’ve connected to set this to the last time they connected to that node. Other nodes just relaying the IP address should not change the time. Nodes can use the time field to avoid relaying old "addr" messages. Malicious nodes may change times or even set them in the future.
+
+address
+Address
+Network IP address of a node.
+\endformat
+
+\startexample
+d91f4854 ........................... [Epoch time][unix epoch time]: 1414012889
+0100000000000000 ................... Service bits: 01 ([network][network] node)
+00000000000000000000ffffc0000233 ... IP Address: ::ffff:192.0.2.51
+208d ............................... Port: 8333
+\endexample
+
+\copyright bitcoin, unit-e

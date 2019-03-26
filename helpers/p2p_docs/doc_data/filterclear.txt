@@ -1,0 +1,10 @@
+
+Part of the connection bloom filtering mechanism as described in BIP-37.
+
+This also undoes the effect of setting the relay field in the "version" message to 0, allowing unfiltered access to "inv" messages announcing new transactions.
+
+unit-e does not require a "filterclear" message before a replacement filter is loaded with a "filterload" message. It also doesn’t require a "filterload" message before a "filterclear" message.
+
+There is no payload in a "filterclear" message. See the [message header section](intro:message-header) for an example of a message without a payload.
+
+\copyright bitcoin

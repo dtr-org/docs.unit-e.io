@@ -1,0 +1,3 @@
+The "verack" message has no payload; for an example of a message with no payload, see the [message headers section](intro:message-header).
+
+\copyright bitcoin

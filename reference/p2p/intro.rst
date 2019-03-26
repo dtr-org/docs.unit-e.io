@@ -1,0 +1,122 @@
+.. Copyright (c) 2014-2018 Bitcoin.org
+   Copyright (c) 2019 The Unit-e developers
+   Distributed under the MIT software license, see the accompanying
+   file LICENSE or https://opensource.org/licenses/MIT.
+
+Introduction
+------------
+
+This section describes the Unit-e peer-to-peer network protocol.
+
+All peer-to-peer communication occurs entirely over TCP.
+
+**Note:** unless their description says otherwise, all multi-byte integers mentioned in this section are transmitted in little-endian order.
+
+Constants And Defaults
+~~~~~~~~~~~~~~~~~~~~~~
+
+The following constants and defaults are taken from unit-e’s `blockchain-parameters.cpp <https://github.com/dtr-org/unit-e/blob/master/src/blockchain/blockchain_parameters.cpp>`__ source code file.
+
++---------+--------------+--------------+
+| Network | Default Port | Start String |
++=========+==============+==============+
+| Testnet | 18333        | 0xfdfcfbfa   |
++---------+--------------+--------------+
+| Regtest | 18444        | 0xfabfb5da   |
++---------+--------------+--------------+
+
+Command line parameters can change what port a node listens on (see ``-help``). Start strings are hardcoded constants that appear at the start of all messages sent on the Unit-e network; they may also appear in data files such as unit-e’s block database.
+
+unit-e’s `blockchain_parameters.cpp <https://github.com/dtr-org/unit-e/blob/master/src/blockchain/blockchain_parameters.cpp>`__ also includes other constants useful to programs, such as the hash of the genesis blocks for the different networks.
+
+Data Types
+~~~~~~~~~~
+
+Messages are composed of fields of different data types. The type of the fields is indicated in the documentation and linked to a definition and explanation of the individual types. There are basic types such as `string <types/string.html>`__ and `integers <types/Integers.html>`__, as well as complex types composed of basic types, for example `BlockHeader <types/BlockHeader.html>`__ or `Address <types/Address.html>`__.
+
+Follow the links in the "Data Type" column to get detailed descriptions of all the types.
+
+Byte ordering
+~~~~~~~~~~~~~
+
+For multi-byte data the order of the bytes has to be defined. This is usually referred to as `Endianness <https://en.wikipedia.org/wiki/Endianness>`__. Most data types and fields in the P2P message use little-endian format, where the least significant byte is sent first.
+
+Hashes usually use a format referred to as "internal byte order" in a 32 byte field (which is equivalent to a `uint256]). See the [integers types <types/Integers.html>`__ for details and examples.
+
+Message Header
+~~~~~~~~~~~~~~
+
+All messages in the network protocol use the same container format, which provides a required multi-field message header and an optional payload. The message header format is:
+
++--------------+------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Name         | Data Type  | Bytes | Description                                                                                                                                                                                                                                                                |
++==============+============+=======+============================================================================================================================================================================================================================================================================+
+| start string | char_\[4]  | 4     | Magic bytes indicating the originating network; used to seek to next message when stream state is unknown.                                                                                                                                                                 |
++--------------+------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| command name | char_\[12] | 12    | ASCII string which identifies what message type is contained in the payload. Followed by nulls (0x00) to pad out byte count; for example: ``version\0\0\0\0\0``.                                                                                                           |
++--------------+------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| payload size | uint32_    | 4     | Number of bytes in payload. The current maximum number of bytes (`"MAX_SIZE" <https://github.com/dtr-org/unit-e/blob/master/src/serialize.h#L27>`__) allowed in the payload by unit-e is 32 MiB—messages with a payload size larger than this will be dropped or rejected. |
++--------------+------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| checksum     | char_\[4]  | 4     | First 4 bytes of SHA256(SHA256(payload)) in internal byte order. If payload is empty, as in ``verack`` and `"getaddr" messages <getaddr.html>`__, the checksum is always 0x5df6e0e2 (SHA256(SHA256(<empty string>))).                                                      |
++--------------+------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The following example is an annotated hex dump of a mainnet message header from a `"verack" message <verack.html>`__ which has no payload.
+
+.. highlight:: text
+
+::
+
+   eeeeaec1 ................... Start string: Mainnet
+   76657261636b000000000000 ... Command name: verack + null padding
+   00000000 ................... Byte count: 0
+   5df6e0e2 ................... Checksum: SHA256(SHA256(<empty>))
+
+Data Messages
+~~~~~~~~~~~~~
+
+The following network messages all request or provide data related to transactions and blocks.
+
+.. figure:: /img/dev/en-p2p-data-messages.svg
+   :alt: Overview Of P2P Protocol Data Request And Reply Messages
+
+   Overview Of P2P Protocol Data Request And Reply Messages
+
+Many of the data messages use inventories as unique identifiers for transactions and blocks. Inventories have a `simple 36-byte structure <types/Inv.html>`__.
+
+Control Messages
+~~~~~~~~~~~~~~~~
+
+The following network messages all help control the connection between two peers or allow them to advise each other about the rest of the network.
+
+.. figure:: /img/dev/en-p2p-control-messages.svg
+   :alt: Overview Of P2P Protocol Control And Advisory Messages
+
+   Overview Of P2P Protocol Control And Advisory Messages
+
+Note that almost none of the control messages are authenticated in any way, meaning they can contain incorrect or intentionally harmful information. In addition, this section does not yet cover P2P protocol operation over the `Tor network <https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29>`__; if you would like to contribute information about Tor, please `open an issue <https://github.com/dtr-org/unit-e/issues>`__.
+
+Merkle Trees
+~~~~~~~~~~~~
+
+`Block Headers <types/BlockHeader.html>`__ contain a Merkle root hash over all transactions in this block. The merkle root is constructed using all the TXIDs of transactions in this block, but first the TXIDs are placed in order as required by the consensus rules:
+
+-  The coinbase transaction’s TXID is always placed first.
+-  Any input within this block can spend an output which also appears in this block (assuming the spend is otherwise valid). However, the TXID corresponding to the output must be placed at some point before the TXID corresponding to the input. This ensures that any program parsing block chain transactions linearly will encounter each output before it is used as an input.
+
+If a block only has a coinbase transaction, the coinbase TXID is used as the merkle root hash.
+
+If a block only has a coinbase transaction and one other transaction, the TXIDs of those two transactions are placed in order, concatenated as 64 raw bytes, and then SHA256(SHA256()) hashed together to form the merkle root.
+
+If a block has three or more transactions, intermediate merkle tree rows are formed. The TXIDs are placed in order and paired, starting with the coinbase transaction’s TXID. Each pair is concatenated together as 64 raw bytes and SHA256(SHA256()) hashed to form a second row of hashes. If there are an odd (non-even) number of TXIDs, the last TXID is concatenated with a copy of itself and hashed. If there are more than two hashes in the second row, the process is repeated to create a third row (and, if necessary, repeated further to create additional rows). Once a row is obtained with only two hashes, those hashes are concatenated and hashed to produce the merkle root.
+
+.. figure:: /img/dev/en-merkle-tree-construction.svg
+   :alt: Example Merkle Tree Construction
+
+   Example Merkle Tree Construction
+
+TXIDs and intermediate hashes are always in internal byte order when they’re concatenated, and the resulting merkle root is also in internal byte order when it’s placed in the block header.
+
+.. _char: types/char.html
+.. _uint32: types/Integers.html
+
+.. Content originally imported from https://github.com/bitcoin-dot-org/bitcoin.org/blob/master/_data/devdocs/en/references/

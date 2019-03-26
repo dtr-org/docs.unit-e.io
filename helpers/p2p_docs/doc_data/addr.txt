@@ -1,0 +1,22 @@
+Each peer which wants to accept incoming connections creates an "addr" message providing its connection information and then sends that message to its peers unsolicited. Some of its peers send that information to their peers (also unsolicited), some of which further distribute it, allowing decentralized peer discovery for any program already on the network.
+
+An "addr" message may also be sent in response to a "getaddr" message.
+
+\startformat
+IP addresses
+vector<AddressWithTime>
+IP address entries. The maximum number of entries is 1,000.
+\endformat
+
+The following annotated hexdump shows part of an "addr" message. (The message header has been omitted and the actual IP address has been replaced with a [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP address.)
+
+\startexample
+01 ................................. Address count: 1
+
+d91f4854 ........................... [Epoch time][unix epoch time]: 1414012889
+0100000000000000 ................... Service bits: 01 ([network][network] node)
+00000000000000000000ffffc0000233 ... IP Address: ::ffff:192.0.2.51
+208d ............................... Port: 8333
+\endexample
+
+\copyright bitcoin

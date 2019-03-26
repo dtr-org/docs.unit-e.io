@@ -1,0 +1,15 @@
+It is sent in the raw transaction format. It can be sent in a variety of situations;
+
+-  **Transaction Response:** unit-e will send it in response to a "getdata" message that requests the transaction with an inventory type of "MSG_TX".
+
+-  **MerkleBlock Response:** unit-e will send it in response to a "getdata" message that requests a merkle block with an inventory type of ``MSG_MERKLEBLOCK``. (This is in addition to sending a "merkleblock" message.) Each "tx" message in this case provides a matched transaction from that block.
+
+\startformat
+tx
+Transaction
+Transaction
+\endformat
+
+For an example hexdump of the raw transaction format, see the [raw transaction section](type:Transaction).
+
+\copyright bitcoin

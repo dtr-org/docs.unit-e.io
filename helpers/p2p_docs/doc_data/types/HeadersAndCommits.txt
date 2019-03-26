@@ -1,0 +1,11 @@
+List of block headers and their corresponding finalizer commit transactions.
+
+\startformat
+block header
+BlockHeader
+Header of block to which the commit transactions belong
+
+commits
+vector<Transaction>
+Finalizer commit transactions for the given block header
+\endformat

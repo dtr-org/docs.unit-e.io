@@ -1,0 +1,11 @@
+A character represented as an unsigned 8 bit value. The representation is equivalent to [uint8](type:uint8).
+
+Characters are often used as part of variable sized strings as a ``vector<char>`` which is equivalent to [string](type:string) or as part of a fixed size string. This is represented in the form ``char[size]`` where size is the number of characters in the string.
+
+\startexample
+61 ... 'a'
+62 ... 'b'
+63 ... 'c'
+\endexample
+
+\copyright unit-e

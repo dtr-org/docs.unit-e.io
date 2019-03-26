@@ -1,0 +1,11 @@
+(Nodes are not expected to relay historic transactions which are no longer in the memory pool or relay set. Nodes may also have pruned spent transactions from older blocks, making them unable to send those blocks.)
+
+The format and maximum size limitations of the "notfound" message are identical to the "inv" message; only the message header differs.
+
+\startformat
+inventory
+vector<Inv>
+One or more inventory entries up to a maximum of 50,000 entries.
+\endformat
+
+\copyright bitcoin

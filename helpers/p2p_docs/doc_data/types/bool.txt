@@ -1,0 +1,8 @@
+Boolean value represented as [uint8](type:Integers). Only legal values are 0x00 for false and 0x01 for true.
+
+\startexample
+00... Boolean "false" value
+01... Boolean "true" value
+\endexample
+
+\copyright unit-e

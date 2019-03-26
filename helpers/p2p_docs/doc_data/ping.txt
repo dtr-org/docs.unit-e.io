@@ -1,0 +1,15 @@
+If a TCP/IP error is encountered when sending the "ping" message (such as a connection timeout), the transmitting node can assume that the receiving node is disconnected. The response to a "ping" message is the "pong" message.
+
+The message includes a single field, the nonce.
+
+\startformat
+nonce
+uint64
+Random nonce assigned to this "ping" message. The responding "pong" message will include this nonce to identify the "ping" message to which it is replying. See BIP-31 for details.
+\endformat
+
+\startexample intro
+0094102111e2af4d ... Nonce
+\endexample
+
+\copyright bitcoin

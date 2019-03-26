@@ -1,0 +1,4 @@
+
+There is no payload in a "sendheaders" message. See the [message header section](intro:message-header) for an example of a message without a payload.
+
+\copyright bitcoin

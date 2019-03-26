@@ -1,0 +1,23 @@
+addr: PASS: msg_addr(addrs=[CAddress(nServices=5708980185 ip=0.0.255.255 port=49152)])
+feefilter: PASS: msg_feefilter(feerate=0000bd7c)
+filteradd: SKIP: No test class for object 'filteradd'
+filterload: SKIP: No test class for object 'filterload'
+getblocks: PASS: msg_getblocks(locator=CBlockLocator(nVersion=70001 vHave=[682255497327840859109876827184348783616618403712752197587, 267634439356589114542826025174106013472831758266183990876]) hashstop=0000000000000000000000000000000000000000000000000000000000000000)
+headers: PASS: msg_headers(headers=[CBlockHeader(nVersion=2 hashPrevBlock=00000000000000000cca48eb4b330d91e8d946d344ca302a86a280161b0bffb6 hashMerkleRoot=7114b3aa8a049bbc12cdde1008a2dd70e2ed045f698593ca869394ee52aa109d nTime=Thu Nov  6 03:12:52 2014 nBits=181bc330 nNonce=64089ffe)])
+inv: PASS: msg_inv(inv=[CInv(type=TX hash=5af521b6a11d0829e43247224f03ca42c41f0b5d92a009c55d1fac09d7ff55de), CInv(type=TX hash=c78dc6b217985ee84ae972d8f1aa55a0b8246f767829261880e03770996dd391)])
+merkleblock: SKIP: No test class for object 'merkleblock'
+ping: PASS: msg_ping(nonce=4dafe21121109400)
+reject: PASS: msg_reject: b'tx' 18 b'bad-txns-inputs-spent' [2128225423fb7595931710a386af7b94725900315acabfe73b0951abfc154739]
+snapshot: PASS: msg_snapshot(Snapshot(snapshot_hash=803ad4062fd1fcae8e3c21558d6f463731740d488aad0ff143354c765581cdd9 utxo_subset_index=9833440827789222417, utxo_subsets=[UTXOSubset(tx_id=d77b4b7e87b8ca0c5138cd8eb38dd428ec1027bb32d7dceff484a0b5707e38d2 height=7, is_coin_base=0 outputs={2: CTxOut(nValue=0.00000042 scriptPubKey=123456)})]))
+version: PASS: msg_version(nVersion=70002 nServices=1 nTime=Sat Nov  8 22:48:44 2014 addrTo=CAddress(nServices=1 ip=198.27.100.9 port=8333) addrFrom=CAddress(nServices=1 ip=203.0.113.192 port=8333) nNonce=0xF85379C9CB358012 strSubVer=b'/Feuerland:0.1.0/' nStartingHeight=329167 nRelay=1)
+Address: PASS: CAddress(nServices=1 ip=192.0.2.51 port=8333)
+AddressWithTime: SKIP: No test class for object 'AddressWithTime'
+BlockHeader: PASS: CBlockHeader(nVersion=2 hashPrevBlock=00000000000000000cca48eb4b330d91e8d946d344ca302a86a280161b0bffb6 hashMerkleRoot=7114b3aa8a049bbc12cdde1008a2dd70e2ed045f698593ca869394ee52aa109d nTime=Thu Nov  6 03:12:52 2014 nBits=181bc330 nNonce=64089ffe)
+CompactSize: SKIP: No test class for object 'CompactSize'
+Integers: SKIP: No test class for object 'Integers'
+Transaction: PASS: CTransaction(nVersion=1 vin=[CTxIn(prevout=COutPoint(hash=3f4fa19803dec4d6a84fae3821da7ac7577080ef75451294e71f9b20e0ab1e7b n=0) scriptSig=4830450221008949f0cb400094ad2b5eb399d59d01c14d73d8fe6e96df1a7150deb388ab8935022079656090d7f6bac4c9a94e0aad311a4268e082a725f8aeae0573fb12ff866a5f01 nSequence=4294967295)] vout=[CTxOut(nValue=49.99990000 scriptPubKey=76a914cbc20a7664f2f69e5355aa427045bc15e7c6c77288ac)] wit=CTxWitness() nLockTime=0)
+TxIn: PASS: CTxIn(prevout=COutPoint(hash=0000000000000000000000000000000000000000000000000000000100000001 n=0) scriptSig= nSequence=4294967295)
+bool: SKIP: No test class for object 'bool'
+char: SKIP: No test class for object 'char'
+string: SKIP: No test class for object 'string'
+vector: SKIP: No test class for object 'vector'

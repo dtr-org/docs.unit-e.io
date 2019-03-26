@@ -1,0 +1,12 @@
+
+\startformat
+index
+CompactSize
+The index into the block at which this transaction is located. Differentially encoded, i.e. the resulting index is calculated as effective_index = previous_index + index + 1. If it's the first index in the list it is taken as it is.
+
+tx
+Transaction
+The transaction which is in the block at the effective index.
+\endformat
+
+\copyright bitcoin, unit-e

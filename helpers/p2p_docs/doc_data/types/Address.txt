@@ -1,0 +1,23 @@
+Network IP address of a peer.
+
+\startformat
+services
+uint64
+The services the node advertised in its "version" message.
+
+IP address
+char[16]
+IPv6 address in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses)
+
+port
+uint8[2]
+Port number in **big endian byte order**. Note that Bitcoin Core will only connect to nodes with non-standard port numbers as a last resort for finding peers. This is to prevent anyone from trying to use the network to disrupt non-Unit-e  services that run on other ports.
+\endformat
+
+\startexample
+0100000000000000 ................... Service bits: 01 ([network][network] node)
+00000000000000000000ffffc0000233 ... IP Address: ::ffff:192.0.2.51
+208d ............................... Port: 8333
+\endexample
+
+\copyright bitcoin

@@ -1,0 +1,18 @@
+
+This message is part of the snapshot mechanism as defined in UIP-11.
+
+\startformat
+snapshot hash
+uint256
+Hash of requested snapshot
+
+utxo subset index
+uint64
+Index of first UTXO subset in the snapshot
+
+utxo subset count
+uint16
+Number of UTXO subsets to return
+\endformat
+
+\copyright unit-e

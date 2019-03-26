@@ -1,0 +1,5 @@
+The transmitting node can use those IP addresses to quickly update its database of available nodes rather than waiting for unsolicited "addr" messages to arrive over time.
+
+There is no payload in a "getaddr" message. See the [message header section](intro:message-header) for an example of a message without a payload.
+
+\copyright bitcoin

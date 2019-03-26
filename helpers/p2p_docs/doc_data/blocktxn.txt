@@ -1,0 +1,16 @@
+
+Part of the compact blocks mechanism as described in BIP-152.
+
+Upon receipt of a properly-formatted requested "blocktxn" message, nodes should attempt to reconstruct the full block by taking the prefilledtxn transactions from the original "cmpctblock" message and placing them in the marked positions, then for each short transaction ID from the original "cmpctblock" message, in order, find the corresponding transaction either from the "blocktxn" message or from other sources and place it in the first available position in the block then once the block has been reconstructed, it shall be processed as normal, keeping in mind that short transaction IDs are expected to occasionally collide, and that nodes must not be penalized for such collisions, wherever they appear.
+
+\startformat
+block hash
+uint256
+The blockhash of the block which the transactions being provided are in.
+
+transactions
+vector<Transaction>
+Vector of transactions, for an example hexdump of the raw transaction format, see the [raw transaction section](type:Transaction).
+\endformat
+
+\copyright bitcoin

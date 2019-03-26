@@ -1,0 +1,16 @@
+
+##### Outpoint: The Specific Part Of A Specific Output
+
+Because a single transaction can include multiple outputs, the outpoint structure includes both a TXID and an output index number to refer to specific output.
+
+\startformat
+hash
+uint256
+The TXID of the transaction holding the output to spend. The TXID is a hash provided here in internal byte order.
+
+index
+uint32
+The output index number of the specific output to spend from the transaction. The first output is 0x00000000.
+\endformat
+
+\copyright bitcoin, unit-e

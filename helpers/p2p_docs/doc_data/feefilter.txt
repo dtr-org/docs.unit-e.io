@@ -1,0 +1,22 @@
+
+Mempool limiting provides protection against attacks and spam transactions that have low fee rates and are unlikely to be included in mined blocks. The "feefilter" messages allows a node to inform its peers that it will not accept transactions below a specified fee rate into its mempool, and therefore that the peers can skip relaying inv messages for transactions below that fee rate to that node.
+
+\startformat
+feerate
+uint64
+The fee rate (in satoshis per kilobyte) below which transactions should not be relayed to this peer.
+\endformat
+
+The receiving peer may choose to ignore the message and not filter transaction inv messages.
+
+The fee filter is additive with bloom filters. If an SPV client loads a bloom filter and sends a feefilter message, transactions should only be relayed if they pass both filters.
+
+Note however that feefilter has no effect on block propagation or responses to getdata messages. For example, if a node requests a merkleblock from its peer by sending a getdata message with inv type MSG_FILTERED_BLOCK and it has previously sent a feefilter to that peer, the peer should respond with a merkleblock containing *all* the transactions matching the bloom filter, even if they are below the feefilter fee rate.
+
+inv messages generated from a mempool message are subject to a fee filter if it exists.
+
+\startexample intro
+7cbd000000000000 ... satoshis per kilobyte: 48,508
+\endexample
+
+\copyright bitcoin

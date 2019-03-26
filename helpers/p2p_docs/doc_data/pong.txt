@@ -1,0 +1,13 @@
+unit-e will, by default, disconnect from any clients which have not responded to a "ping" message within 20 minutes.
+
+To allow nodes to keep track of latency, the "pong" message sends back the same nonce received in the "ping" message it is replying to.
+
+The format of the "pong" message is identical to the "ping" message; only the message header differs.
+
+\startformat
+nonce
+uint64
+Random nonce assigned to this "ping" message. The responding "pong" message will include this nonce to identify the "ping" message to which it is replying. See BIP-31 for details.
+\endformat
+
+\copyright bitcoin

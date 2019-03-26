@@ -1,0 +1,48 @@
+Each peer which wants to accept incoming connections creates an "addr" message providing its connection information and then sends that message to its peers unsolicited. Some of its peers send that information to their peers (also unsolicited), some of which further distribute it, allowing decentralized peer discovery for any program already on the [network](/en/developer-guide#term-network).
+
+An "addr" message may also be sent in response to a "getaddr" message.
+
+\todo example for a todo entry
+
+\startformat
+IP addresses
+vector<Address>
+IP address entries. The maximum number of entries is 1,000.
+\endformat
+
+Each encapsulated [network](/en/developer-guide#term-network) IP address currently uses the following structure:
+
+\startformat
+time
+uint32
+*Added in*\ [protocol version 31402](/en/developer-reference#protocol-versions)\ *.* A time in [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) format. Nodes advertising their own IP address set this to the current time. Nodes advertising IP addresses they’ve connected to set this to the last time they connected to that node. Other nodes just relaying the IP address should not change the time. Nodes can use the time field to avoid relaying old "addr" messages. Malicious nodes may change times or even set them in the future.
+
+services
+uint64
+The services the node advertised in its "version" message.
+
+IP address
+char[16]
+IPv6 address in **big endian byte order**. IPv4 addresses can be provided as [IPv4-mapped IPv6 addresses](http://en.wikipedia.org/wiki/IPv6#IPv4-mapped_IPv6_addresses)
+
+port
+uint16
+Port number in **big endian byte order**. Note that Bitcoin Core will only connect to nodes with non-standard port numbers as a last resort for finding peers. This is to prevent anyone from trying to use the [network](/en/developer-guide#term-network) to disrupt non-Unit-e  services that run on other ports.
+\endformat
+
+\figure /img/dev/en-bloom-update.svg, Automatically Updating Bloom Filters
+
+The following annotated hexdump shows part of an "addr" message. (The message header has been omitted and the actual IP address has been replaced with a [RFC5737](http://tools.ietf.org/html/rfc5737) reserved IP address.)
+
+\startexample
+fde803 ............................. Address count: 1000
+
+d91f4854 ........................... [Epoch time][unix epoch time]: 1414012889
+0100000000000000 ................... Service bits: 01 ([network][network] node)
+00000000000000000000ffffc0000233 ... IP Address: ::ffff:192.0.2.51
+208d ............................... Port: 8333
+
+[...] .............................. (999 more addresses omitted)
+\endexample
+
+\copyright bitcoin

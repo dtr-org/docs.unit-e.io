@@ -1,0 +1,5 @@
+The message has no payload.
+
+This message is part of the snapshot mechanism as defined in UIP-11.
+
+\copyright unit-e

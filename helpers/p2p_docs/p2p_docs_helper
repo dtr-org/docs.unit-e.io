@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# Distributed under the MIT software license, see the accompanying
+# file LICENSE or https://www.opensource.org/licenses/MIT.
+"""Usage:
+  p2p_docs_helper generate [--show-data-types] UNIT_E_SRC_DIR
+  p2p_docs_helper test [--update-expected-results] [--object=<object_name>] UNIT_E_SRC_DIR
+  p2p_docs_helper -h | --help
+
+Commands:
+  generate   Generate RST docs from C++ sources and doc data
+  test       Test that documentation is in sync with code
+
+Arguments:
+  UNIT_E_SRC_DIR  Path to directory containing git checkout of unit-e source
+                  code
+
+Options:
+  --show-data-types          Show data types present in generated documents
+  --update-expected-results  Update the file with expected results
+  --object=<object name>     Only execute test for given message or data type
+  -h, --help                 Show this help
+"""
+from docopt import docopt
+import sys
+
+from cli_controller import CliController
+
+
+def main():
+    arguments = docopt(__doc__)
+
+    controller = CliController()
+    if arguments["generate"]:
+        controller.generate(arguments["UNIT_E_SRC_DIR"],
+                            show_data_types=arguments["--show-data-types"])
+    elif arguments["test"]:
+        controller.test(arguments["UNIT_E_SRC_DIR"],
+                update_expected_results=arguments["--update-expected-results"],
+                object_name = arguments["--object"])
+    else:
+        sys.exit("Unknown command. Exiting.")
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,20 @@
+
+\startformat
+tx id
+uint256
+Transaction hash
+
+height
+uint32
+Block height where the transaction was included
+
+is_coin_base
+uint8
+Bool indicating if the transaction is a coinbase transaction. 1 for true, 0 for false.
+
+outputs
+vector<OutputMapping>
+Map of outputs this transaction contains
+\endformat
+
+\copyright unit-e

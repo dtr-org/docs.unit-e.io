@@ -1,0 +1,101 @@
+Unit-e transactions are broadcast between peers in a serialized byte format, called raw format. It is this form of a transaction which is SHA256(SHA256()) hashed to create the TXID and, ultimately, the merkle root of a block containing the transaction, making the transaction format part of the consensus rules.
+
+unit-e and many other tools print and accept raw transactions encoded as hex.
+
+With the adoption of Segregated Witness (see BIP-144) a new transaction format was introduced where "witness" data is handled in a separate data structure. unit-e supports Segregated Witness by default. Both transaction formats are described here.
+
+There are several different types of transactions in unit-e. They follow the general transaction format but indicate a type in the upper two bytes of the version field. The types are defined in UIP-18.
+
+A traditional raw transaction has the following top-level format:
+
+\startformat
+version
+uint32
+The lower two bytes represent the transaction version number; currently version 2. Programs creating transactions using newer consensus rules may use higher version numbers. Version 2 means that BIP-68 applies. The upper two bytes represent the transaction type according to UIP-18.
+
+tx_in
+vector<TxIn>
+Transaction inputs
+
+tx_out
+vector<TxOut>
+Transaction outputs
+
+lock_time
+uint32
+A time ([Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)) or block number. See the locktime parsing rules.
+\endformat
+
+A transaction may have multiple inputs and outputs, so the TxIn and TxOut structures may recur within a transaction. CompactSize unsigned integers are a form of variable-length integers; they are described in the [CompactSize section](type:CompactSize).
+
+**Example**
+
+The sample raw transaction itemized below is the one created in the Simple Raw Transaction section of the Developer Examples. It spends a previous pay-to-pubkey output by paying to a new pay-to-pubkey-hash (P2PKH) output.
+
+\startexample
+01000000 ................................... Version
+
+01 ......................................... Number of inputs
+|
+| 7b1eabe0209b1fe794124575ef807057
+| c77ada2138ae4fa8d6c4de0398a14f3f ......... Outpoint TXID
+| 00000000 ................................. Outpoint index number
+|
+| 49 ....................................... Bytes in sig. script: 73
+| | 48 ..................................... Push 72 bytes as data
+| | | 30450221008949f0cb400094ad2b5eb3
+| | | 99d59d01c14d73d8fe6e96df1a7150de
+| | | b388ab8935022079656090d7f6bac4c9
+| | | a94e0aad311a4268e082a725f8aeae05
+| | | 73fb12ff866a5f01 ..................... [Secp256k1][secp256k1] signature
+|
+| ffffffff ................................. Sequence number: UINT32_MAX
+
+01 ......................................... Number of outputs
+| f0ca052a01000000 ......................... Satoshis (49.99990000 UTE)
+|
+| 19 ....................................... Bytes in pubkey script: 25
+| | 76 ..................................... OP_DUP
+| | a9 ..................................... OP_HASH160
+| | 14 ..................................... Push 20 bytes as data
+| | | cbc20a7664f2f69e5355aa427045bc15
+| | | e7c6c772 ............................. PubKey hash
+| | 88 ..................................... OP_EQUALVERIFY
+| | ac ..................................... OP_CHECKSIG
+
+00000000 ................................... locktime: 0 (a block height)
+\endexample
+
+A Segregated Witness raw transaction has the following top-level format:
+
+\startformat
+version
+uint32
+The lower two bytes represent the transaction version number; currently version 2. Programs creating transactions using newer consensus rules may use higher version numbers. Version 2 means that BIP-68 applies. The upper two bytes represent the transaction type according to UIP-18.
+
+marker
+char
+Must be 0x00
+
+flag
+char
+Must be 0x01
+
+tx_in
+vector<TxIn>
+List of transaction inputs
+
+tx_out
+vector<TxOut>
+List of transaction outputs
+
+witness
+vector<string>[]
+List of witness fields as serialized byte arrays. There must be exactly as many witness fields as there are transaction inputs. Each witness fields consists of a vector of strings, where each string represents a stack item. The list of witness fields is ordered in the same way as the list of transaction inputs so that each input has a corresponding witness. See BIP-141 for details.
+
+lock_time
+uint32
+A time ([Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)) or block number. See the locktime parsing rules.
+\endformat
+
+\copyright bitcoin, unit-e

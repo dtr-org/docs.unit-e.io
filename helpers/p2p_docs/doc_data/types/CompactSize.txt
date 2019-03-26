@@ -1,0 +1,34 @@
+The raw transaction format and several peer-to-peer network messages use a type of variable-length integer to indicate the number of bytes in a following piece of data.
+
+unit-e code and this document refers to these variable length integers as CompactSize. Many other documents refer to them as var_int or varInt, but this risks conflation with other variable-length integer encodings—such as the CVarInt class used in unit-e for serializing data to disk. Because it’s used in the transaction format, the format of CompactSize unsigned integers is part of the consensus rules.
+
+For numbers from 0 to 252 (0xfc), CompactSize unsigned integers look like regular unsigned integers. For other numbers up to 0xffffffffffffffff, a byte is prefixed to the number to indicate its length—but otherwise the numbers look like regular unsigned integers in little-endian order.
+
+\starttable Value, Bytes Used, Format
+>= 0 && <= 0xfc
+1
+[uint8](type:Integers)
+
+>= 0xfd && <= 0xffff
+3
+0xfd followed by the number as [uint16](type:Integers)
+
+>= 0x10000 && <= 0xffffffff
+5
+0xfe followed by the number as [uint32](type:Integers)
+
+>= 0x100000000 && <= 0xffffffffffffffff
+9
+0xff followed by the number as [uint64](type:Integers)
+\endtable
+
+Examples:
+
+\startexample
+00.......... 0x00 (0)
+01.......... 0x01 (1)
+10.......... 0x10 (16)
+fdfd00.......0xfd (253)
+fd0302...... 0x203 (515)
+fe05040302.. 0x2030405 (33752069)
+\endexample

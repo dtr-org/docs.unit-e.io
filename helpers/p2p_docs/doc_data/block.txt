@@ -1,0 +1,18 @@
+
+\startformat
+block header
+BlockHeader
+Block header
+
+transactions
+vector<Transaction>
+Block transactions
+\endformat
+
+The "block" message can be sent for two different reasons:
+
+1. **GetData Response:** Nodes will always send it in response to a "getdata" message that requests the block with an inventory type of "MSG_BLOCK" (provided the node has that block available for relay).
+
+2. **Unsolicited:** Some proposers will send unsolicited "block" messages broadcasting their newly-mined blocks to all of their peers.
+
+\copyright bitcoin, unit-e

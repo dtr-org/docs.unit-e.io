@@ -1,0 +1,14 @@
+
+Part of the mechanism to transfer finalizer commits as described in UIP-21.
+
+\startformat
+status
+uint8
+Status of reply, 0: finalization or "stop" reached, 1: tip reached, 2: message length limit exceeded
+
+header and commits
+vector<HeadersAndCommits>
+List of headers and commits
+\endformat
+
+\copyright unit-e
