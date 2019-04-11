@@ -7,7 +7,7 @@ These are the sources for the documentation at https://docs.unit-e.io.
 Contributions are welcome. See our [contribution guidelines](CONTRIBUTING.md)
 for more details.
 
-The UnitE team is committed to fostering a welcoming and harassment-free
+The Unit-e team is committed to fostering a welcoming and harassment-free
 environment. All participants are expected to adhere to our [code of
 conduct](CODE_OF_CONDUCT.md).
 
@@ -23,3 +23,7 @@ It's all static HTML. You can browse it locally in the `_build/html` directory.
 The content of this repository is licensed under the terms of the [MIT
 license](https://opensource.org/licenses/MIT). See the [LICENSE](LICENSE) file
 for the full text of the license.
+
+Some parts of the documentation are based on content from
+[Bitcoin.org](https://github.com/bitcoin-dot-org/bitcoin.org) and used under the
+MIT license.
