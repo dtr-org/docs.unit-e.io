@@ -1,3 +1,5 @@
+.. _p2p:
+
 P2P Network Protocol
 =======================
 

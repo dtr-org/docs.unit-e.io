@@ -1,27 +1,28 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
 Unit-e Documentation
-===============================================
+====================
 
-Welcome to Unit-e's documentation! This site contains information and detailed
-instructions how to use Unit-e, how to become part of the Unit-e network by
-running nodes, detailed information about the technical concepts, and some
-pointers for how to become involved as a developer. Enjoy!
+Welcome to Unit-e's documentation! This site contains information about the
+:ref:`testnet`, :ref:`reference`, and some pointers for :ref:`how to get
+involved <developer>` as a developer. Enjoy!
+
+.. note:: We build the documentation along with the code_. The site reflects
+  the current evolving state of the code. If you find any omissions or
+  inaccuracies, or you would like to contribute something, please create an
+  issue or pull request on the sources_ of the documentation.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    introduction
-   user
-   operator
+   testnet
    technical
    developer
+   about
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
+.. _code: https://github.com/dtr-org/unit-e
+.. _sources: https://github.com/dtr-org/docs.unit-e.io

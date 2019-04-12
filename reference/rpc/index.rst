@@ -2,10 +2,12 @@
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
+.. _rpc:
+
 RPC API Reference
 =================
 
-This is the reference for the RPC API calls of Unit-e. Use `unite-cli` to run
+This is the reference for the RPC API calls of Unit-e. Use ``unite-cli`` to run
 the commands.
 
 Blockchain

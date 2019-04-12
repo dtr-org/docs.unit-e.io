@@ -1,5 +1,10 @@
 {% extends '!layout.html' %}
 
+{% set display_github = True %}
+{% set github_user = "dtr-org" %}
+{% set github_repo = "docs.unit-e.io" %}
+{% set github_version = "master/" %}
+
 {%- block content %}
 {% if theme_style_external_links|tobool %}
 <div class="rst-content style-external-links">

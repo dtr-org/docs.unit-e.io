@@ -1,9 +1,11 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
-Developer documentation
-=======================
+.. _developer:
+
+Developer information
+=====================
 
 .. note:: This chapter addresses developers who are interested in working on the
   Unit-e software. Software development skills are assumed.
@@ -13,7 +15,3 @@ of Unit-e:
 
 * `unit-e project on GitHub <https://github.com/dtr-org/unit-e>`_
 * `How to contribute <https://github.com/dtr-org/unit-e/blob/master/CONTRIBUTING.md>`_
-
-The unit-e software is a code fork of `Bitcoin Core
-<https://github.com/bitcoin/bitcoin>`_. It's documentation site `bitcoin.org
-<https://bitcoin.org>`_ has a lot of useful information for developers.
