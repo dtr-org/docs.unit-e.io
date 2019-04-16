@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -31,12 +31,12 @@ Argument #3 - addresses
 
 **Type:** string
 
-A json array of unite addresses to filter
+A json array of Unit-e addresses to filter
 
 ::
 
     [
-      "address"     (string) unite address
+      "address"     (string) Unit-e address
       ,...
     ]
 
@@ -73,7 +73,7 @@ Result
     {
       "txid" : "txid",          (string) the transaction id
       "vout" : n,               (numeric) the vout value
-      "address" : "address",    (string) the unite address
+      "address" : "address",    (string) the Unit-e address
       "account" : "account",    (string) DEPRECATED. The associated account, or "" for the default account
       "scriptPubKey" : "key",   (string) the script key
       "amount" : x.xxx,         (numeric) the transaction output amount in UTE
@@ -91,13 +91,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli listunspent
+  unit-e-cli listunspent
 
 ::
 
-  unite-cli listunspent 6 9999999 "[\"1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg\",\"1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP\"]"
+  unit-e-cli listunspent 6 9999999 "[\"1PGFqEzfmQch1gKD3ra4k18PNj3tTUUSqg\",\"1LtvqCaApEdUGFkpKMM4MstjcaL4dKg8SP\"]"
 
 ::
 
@@ -105,7 +108,7 @@ Examples
 
 ::
 
-  unite-cli listunspent 6 9999999 '[]' true '{ "minimumAmount": 0.005 }'
+  unit-e-cli listunspent 6 9999999 '[]' true '{ "minimumAmount": 0.005 }'
 
 ::
 

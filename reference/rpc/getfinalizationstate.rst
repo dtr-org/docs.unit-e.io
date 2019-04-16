@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -15,8 +15,8 @@ Result
 ::
 
   {
-    "currentEpoch": xxxxxxx            (numeric) currentEpoch
     "currentDynasty": xxxxxxx          (numeric) currentDynasty
+    "currentEpoch": xxxxxxx            (numeric) currentEpoch
     "lastJustifiedEpoch": xxxxxxx      (numeric) lastJustifiedEpoch
     "lastFinalizedEpoch": xxxxxxx      (numeric) lastFinalizedEpoch
     "validators": xxxxxxx              (numeric) current number of active validators
@@ -25,9 +25,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getfinalizationstate
+  unit-e-cli getfinalizationstate
 
 ::
 

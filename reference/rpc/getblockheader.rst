@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -64,9 +64,12 @@ Result (for verbose=false)
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
+  unit-e-cli getblockheader "00000000c937983704a73af28acdec37b049d214adbda81d7e2a3dd146f6ed09"
 
 ::
 

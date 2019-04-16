@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -7,7 +7,7 @@ sendfrom
 
 ``sendfrom "fromaccount" "toaddress" amount ( minconf "comment" "comment_to" )``
 
-DEPRECATED (use sendtoaddress). Sent an amount from an account to a unite address.
+DEPRECATED (use sendtoaddress). Sent an amount from an account to a Unit-e address.
 
 Argument #1 - fromaccount
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,7 +24,7 @@ Argument #2 - toaddress
 
 **Type:** string, required
 
-The unite address to send funds to.
+The Unit-e address to send funds to.
 
 Argument #3 - amount
 ~~~~~~~~~~~~~~~~~~~~
@@ -73,13 +73,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Send 0.01 UTE from the default account to the address, must have at least 1 confirmation::
 
-  unite-cli sendfrom "" "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.01
+  unit-e-cli sendfrom "" "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.01
 
 Send 0.01 from the tabby account to the given address, funds must have at least 6 confirmations::
 
-  unite-cli sendfrom "tabby" "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.01 6 "donation" "seans outpost"
+  unit-e-cli sendfrom "tabby" "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.01 6 "donation" "seans outpost"
 
 As a json rpc call::
 

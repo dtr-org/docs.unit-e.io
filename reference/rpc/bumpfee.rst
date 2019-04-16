@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -81,7 +81,10 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Bump the fee, get the new transaction's txid::
 
-  unite-cli bumpfee <txid>
+  unit-e-cli bumpfee <txid>
 

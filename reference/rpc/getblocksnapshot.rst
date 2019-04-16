@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -19,9 +19,12 @@ block hash to lookup. If missing, the top is used.
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getblocksnapshot 0000000000d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03
+  unit-e-cli getblocksnapshot 0000000000d5df086d0ff0b110fbd9d21bb4fc7163af34d08286a2e846f6be03
 
 ::
 

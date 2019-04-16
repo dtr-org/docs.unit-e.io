@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -20,6 +20,7 @@ Result
     "balance": xxxxxxx,              (numeric) the total confirmed balance of the wallet in UTE
     "unconfirmed_balance": xxx,      (numeric) the total unconfirmed balance of the wallet in UTE
     "immature_balance": xxxxxx,      (numeric) the total immature balance of the wallet in UTE
+    "remote_staking_balance": xxx,   (numeric) the total balance that is being staked on remote nodes in UTE
     "txcount": xxxxxxx,              (numeric) the total number of transactions in the wallet
     "keypoololdest": xxxxxx,         (numeric) the timestamp (seconds since Unix epoch) of the oldest pre-generated key in the key pool
     "keypoolsize": xxxx,             (numeric) how many new keys are pre-generated (only counts external keys)
@@ -27,15 +28,18 @@ Result
     "unlocked_until": ttt,           (numeric) the timestamp in seconds since epoch (midnight Jan 1 1970 GMT) that the wallet is unlocked for transfers, or 0 if the wallet is locked
     "encryption_state": xxxxx,       (string) the wallet's encryption status (UNENCRYPTED, LOCKED, UNLOCKED, UNLOCKED_FOR_STAKING_ONLY)
     "paytxfee": x.xxxx,              (numeric) the transaction fee configuration, set in UTE/kB
-    "hdmasterkeyid": "<hash160>"     (string, optional) the Hash160 of the HD master pubkey (only present when HD is enabled)
+    "hdseedid": "<hash160>"     (string, optional) the Hash160 of the HD master pubkey (only present when HD is enabled)
   }
 
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getwalletinfo
+  unit-e-cli getwalletinfo
 
 ::
 

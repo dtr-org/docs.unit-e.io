@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -13,7 +13,7 @@ It returns a json object with the address and redeemScript.
 
 DEPRECATION WARNING: Using addresses with createmultisig is deprecated. Clients must
 transition to using addmultisigaddress to create multisig addresses with addresses known
-to the wallet before upgrading to v0.17. To use the deprecated functionality, start united with -deprecatedrpc=createmultisig
+to the wallet. To use the deprecated functionality, start unit-e with -deprecatedrpc=createmultisig
 
 Argument #1 - nrequired
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,9 +49,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Create a multisig address from 2 public keys::
 
-  unite-cli createmultisig 2 "[\"03789ed0bb717d88f7d321a368d905e7430207ebbd82bd342cf11ae157a7ace5fd\",\"03dbc6764b8884a92e871274b87583e6d5c2a58819473e17e107ef3f6aa5a61626\"]"
+  unit-e-cli createmultisig 2 "[\"03789ed0bb717d88f7d321a368d905e7430207ebbd82bd342cf11ae157a7ace5fd\",\"03dbc6764b8884a92e871274b87583e6d5c2a58819473e17e107ef3f6aa5a61626\"]"
 
 As a json rpc call::
 

@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -39,17 +39,20 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Amount received by the default account with at least 1 confirmation::
 
-  unite-cli getreceivedbyaccount ""
+  unit-e-cli getreceivedbyaccount ""
 
 Amount received at the tabby account including unconfirmed amounts with zero confirmations::
 
-  unite-cli getreceivedbyaccount "tabby" 0
+  unit-e-cli getreceivedbyaccount "tabby" 0
 
 The amount with at least 6 confirmations::
 
-  unite-cli getreceivedbyaccount "tabby" 6
+  unit-e-cli getreceivedbyaccount "tabby" 6
 
 As a json rpc call::
 

@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -44,7 +44,7 @@ Result
     "details" : [
       {
         "account" : "accountname",      (string) DEPRECATED. The account name involved in the transaction, can be "" for the default account.
-        "address" : "address",          (string) The unite address involved in the transaction
+        "address" : "address",          (string) The Unit-e address involved in the transaction
         "category" : "send|receive",    (string) The category, either 'send' or 'receive'
         "amount" : x.xxx,                 (numeric) The amount in UTE
         "label" : "label",              (string) A comment for the address/transaction, if any
@@ -62,13 +62,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"
+  unit-e-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d"
 
 ::
 
-  unite-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" true
+  unit-e-cli gettransaction "1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d" true
 
 ::
 

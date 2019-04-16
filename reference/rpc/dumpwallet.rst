@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -19,7 +19,7 @@ Argument #1 - filename
 
 **Type:** string, required
 
-The filename with path (either absolute or relative to united)
+The filename with path (either absolute or relative to unit-e)
 
 Result
 ~~~~~~
@@ -33,9 +33,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli dumpwallet "test"
+  unit-e-cli dumpwallet "test"
 
 ::
 

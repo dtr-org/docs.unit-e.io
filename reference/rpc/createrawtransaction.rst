@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -44,7 +44,7 @@ a json object with outputs
 ::
 
     {
-      "address": x.xxx,    (numeric or string, required) The key is the unite address, the numeric value (can be string) is the UTE amount
+      "address": x.xxx,    (numeric or string, required) The key is the Unit-e address, the numeric value (can be string) is the UTE amount
       "data": "hex"      (string, required) The key is "data", the value is hex encoded data
       ,...
     }
@@ -80,13 +80,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"address\":0.01}"
+  unit-e-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"address\":0.01}"
 
 ::
 
-  unite-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"data\":\"00010203\"}"
+  unit-e-cli createrawtransaction "[{\"txid\":\"myid\",\"vout\":0}]" "{\"data\":\"00010203\"}"
 
 ::
 

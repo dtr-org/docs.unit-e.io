@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -44,24 +44,27 @@ Result
        "hex" : "hex",        (string)
        "reqSigs" : n,          (numeric) Number of required signatures
        "type" : "pubkeyhash", (string) The type, eg pubkeyhash
-       "addresses" : [          (array of string) array of unite addresses
-          "address"     (string) unite address
+       "addresses" : [          (array of string) array of Unit-e addresses
+          "address"     (string) Unit-e address
           ,...
        ]
     },
-    "coinbase" : true|false   (boolean) Coinbase or not
+    "txtype" :          (string) Transaction type
   }
 
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Get unspent transactions::
 
-  unite-cli listunspent
+  unit-e-cli listunspent
 
 View the details::
 
-  unite-cli gettxout "txid" 1
+  unit-e-cli gettxout "txid" 1
 
 As a json rpc call::
 

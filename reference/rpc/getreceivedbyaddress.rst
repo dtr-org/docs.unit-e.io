@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -14,7 +14,7 @@ Argument #1 - address
 
 **Type:** string, required
 
-The unite address for transactions.
+The Unit-e address for transactions.
 
 Argument #2 - minconf
 ~~~~~~~~~~~~~~~~~~~~~
@@ -39,17 +39,20 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 The amount from transactions with at least 1 confirmation::
 
-  unite-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX"
+  unit-e-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX"
 
 The amount including unconfirmed transactions, zero confirmations::
 
-  unite-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" 0
+  unit-e-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" 0
 
 The amount with at least 6 confirmations::
 
-  unite-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" 6
+  unit-e-cli getreceivedbyaddress "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" 6
 
 As a json rpc call::
 

@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -41,17 +41,20 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Create a transaction::
 
-  unite-cli createrawtransaction "[{\"txid\" : \"mytxid\",\"vout\":0}]" "{\"myaddress\":0.01}"
+  unit-e-cli createrawtransaction "[{\"txid\" : \"mytxid\",\"vout\":0}]" "{\"myaddress\":0.01}"
 
 Sign the transaction, and get back the hex::
 
-  unite-cli signrawtransaction "myhex"
+  unit-e-cli signrawtransaction "myhex"
 
 Send the transaction (signed hex)::
 
-  unite-cli sendrawtransaction "signedhex"
+  unit-e-cli sendrawtransaction "signedhex"
 
 As a json rpc call::
 

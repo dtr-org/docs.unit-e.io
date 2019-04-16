@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -12,13 +12,16 @@ Stops current wallet rescan triggered by an RPC call, e.g. by an importprivkey c
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Import a private key::
 
-  unite-cli importprivkey "mykey"
+  unit-e-cli importprivkey "mykey"
 
 Abort the running wallet rescan::
 
-  unite-cli abortrescan
+  unit-e-cli abortrescan
 
 As a JSON-RPC call::
 

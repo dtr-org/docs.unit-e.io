@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -7,7 +7,7 @@ getrawchangeaddress
 
 ``getrawchangeaddress ( "address_type" )``
 
-Returns a new UnitE address, for receiving change.
+Returns a new Unit-e address, for receiving change.
 
 This is for use with raw transactions, NOT normal use.
 
@@ -34,9 +34,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getrawchangeaddress
+  unit-e-cli getrawchangeaddress
 
 ::
 

@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -9,7 +9,7 @@ addmultisigaddress
 
 Add a nrequired-to-sign multisignature address to the wallet. Requires a new wallet backup.
 
-Each key is a UnitE address or hex-encoded public key.
+Each key is a Unit-e address or hex-encoded public key.
 
 This functionality is only intended for use with non-watchonly addresses.
 
@@ -29,12 +29,12 @@ Argument #2 - keys
 
 **Type:** string, required
 
-A json array of unite addresses or hex-encoded public keys
+A json array of Unit-e addresses or hex-encoded public keys
 
 ::
 
      [
-       "address"                  (string) unite address or hex-encoded public key
+       "address"                  (string) Unit-e address or hex-encoded public key
        ...,
      ]
 
@@ -62,8 +62,8 @@ Result
     "redeemScript":"script"         (string) The string value of the hex-encoded redemption script.
   }
 
-Result (DEPRECATED. To see this result in v0.16 instead, please start united with -deprecatedrpc=addmultisigaddress).
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Result (DEPRECATED. To see this result instead, please start unit-e with -deprecatedrpc=addmultisigaddress).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table::
    :header-rows: 1
@@ -73,14 +73,17 @@ Result (DEPRECATED. To see this result in v0.16 instead, please start united wit
      - Description
    * - address
      - string
-     - A unite address associated with the keys.
+     - A Unit-e address associated with the keys.
 
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Add a multisig address from 2 addresses::
 
-  unite-cli addmultisigaddress 2 "[\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\",\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\"]"
+  unit-e-cli addmultisigaddress 2 "[\"16sSauSf5pF2UkUwvKGq4qjNRzBZYqgEL5\",\"171sgjn4YtPu27adkKGrdDwzRTxnRkBfKV\"]"
 
 As json rpc call::
 

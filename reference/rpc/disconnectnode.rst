@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -30,13 +30,16 @@ The node ID (see getpeerinfo for node IDs)
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli disconnectnode "192.168.0.6:7182"
+  unit-e-cli disconnectnode "192.168.0.6:7182"
 
 ::
 
-  unite-cli disconnectnode "" 1
+  unit-e-cli disconnectnode "" 1
 
 ::
 

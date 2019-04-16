@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -14,7 +14,7 @@ Argument #1 - address
 
 **Type:** string, required
 
-The unite address for account lookup.
+The Unit-e address for account lookup.
 
 Result
 ~~~~~~
@@ -32,9 +32,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getaccount "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX"
+  unit-e-cli getaccount "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX"
 
 ::
 

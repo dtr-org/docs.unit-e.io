@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -40,13 +40,16 @@ If set, the bantime must be an absolute timestamp in seconds since epoch (Jan 1 
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli setban "192.168.0.6" "add" 86400
+  unit-e-cli setban "192.168.0.6" "add" 86400
 
 ::
 
-  unite-cli setban "192.168.0.0/24" "add"
+  unit-e-cli setban "192.168.0.0/24" "add"
 
 ::
 

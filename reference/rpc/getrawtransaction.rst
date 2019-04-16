@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -92,7 +92,7 @@ Result (if verbose is set to true)
            "reqSigs" : n,            (numeric) The required sigs
            "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'
            "addresses" : [           (json array of string)
-             "address"        (string) unite address
+             "address"        (string) Unit-e address
              ,...
            ]
          }
@@ -108,13 +108,16 @@ Result (if verbose is set to true)
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getrawtransaction "mytxid"
+  unit-e-cli getrawtransaction "mytxid"
 
 ::
 
-  unite-cli getrawtransaction "mytxid" true
+  unit-e-cli getrawtransaction "mytxid" true
 
 ::
 
@@ -122,9 +125,9 @@ Examples
 
 ::
 
-  unite-cli getrawtransaction "mytxid" false "myblockhash"
+  unit-e-cli getrawtransaction "mytxid" false "myblockhash"
 
 ::
 
-  unite-cli getrawtransaction "mytxid" true "myblockhash"
+  unit-e-cli getrawtransaction "mytxid" true "myblockhash"
 

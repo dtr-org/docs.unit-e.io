@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -14,7 +14,7 @@ Argument #1 - address
 
 **Type:** string, required
 
-The unite address to send to.
+The Unit-e address to send to.
 
 Argument #2 - amount
 ~~~~~~~~~~~~~~~~~~~~
@@ -88,17 +88,20 @@ Result
 Examples
 ~~~~~~~~
 
-::
 
-  unite-cli sendtoaddress "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.1
-
-::
-
-  unite-cli sendtoaddress "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.1 "donation" "seans outpost"
+.. highlight:: shell
 
 ::
 
-  unite-cli sendtoaddress "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.1 "" "" true
+  unit-e-cli sendtoaddress "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.1
+
+::
+
+  unit-e-cli sendtoaddress "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.1 "donation" "seans outpost"
+
+::
+
+  unit-e-cli sendtoaddress "1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd" 0.1 "" "" true
 
 ::
 

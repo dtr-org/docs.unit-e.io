@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -14,7 +14,7 @@ Argument #1 - address
 
 **Type:** string, required
 
-The unite address to use for the private key.
+The Unit-e address to use for the private key.
 
 Argument #2 - message
 ~~~~~~~~~~~~~~~~~~~~~
@@ -39,17 +39,20 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Unlock the wallet for 30 seconds::
 
-  unite-cli walletpassphrase "mypassphrase" 30
+  unit-e-cli walletpassphrase "mypassphrase" 30
 
 Create the signature::
 
-  unite-cli signmessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "my message"
+  unit-e-cli signmessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "my message"
 
 Verify the signature::
 
-  unite-cli verifymessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "signature" "my message"
+  unit-e-cli verifymessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "signature" "my message"
 
 As json rpc::
 

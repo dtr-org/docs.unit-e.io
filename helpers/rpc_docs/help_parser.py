@@ -49,7 +49,7 @@ class HelpParser:
             self.section = SECTION.result
             help_data['results'].append(
                 {'title_extension': result_match.group(1)})
-        elif line == "Arguments:":
+        elif line == "Arguments:" or line == "Argument:":
             self.section = SECTION.arguments
         elif re.match(r'Examples?:?', line):
             self.section = SECTION.examples

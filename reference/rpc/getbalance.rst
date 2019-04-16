@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -66,13 +66,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 The total amount in the wallet with 1 or more confirmations::
 
-  unite-cli getbalance
+  unit-e-cli getbalance
 
 The total amount in the wallet at least 6 blocks confirmed::
 
-  unite-cli getbalance "*" 6
+  unit-e-cli getbalance "*" 6
 
 As a json rpc call::
 

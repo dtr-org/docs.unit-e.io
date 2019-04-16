@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -33,13 +33,16 @@ Rescan the wallet for transactions
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Import a public key with rescan::
 
-  unite-cli importpubkey "mypubkey"
+  unit-e-cli importpubkey "mypubkey"
 
 Import using a label without rescan::
 
-  unite-cli importpubkey "mypubkey" "testing" false
+  unit-e-cli importpubkey "mypubkey" "testing" false
 
 As a JSON-RPC call::
 

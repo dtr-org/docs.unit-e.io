@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -16,7 +16,7 @@ Argument #1 - address
 
 **Type:** string, required
 
-The unite address for the private key
+The Unit-e address for the private key
 
 Result
 ~~~~~~
@@ -34,13 +34,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli dumpprivkey "myaddress"
+  unit-e-cli dumpprivkey "myaddress"
 
 ::
 
-  unite-cli importprivkey "mykey"
+  unit-e-cli importprivkey "mykey"
 
 ::
 

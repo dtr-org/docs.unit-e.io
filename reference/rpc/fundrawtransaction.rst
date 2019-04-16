@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -43,7 +43,7 @@ for backward compatibility: passing in a true instead of an object will result i
 ::
 
    {
-     "changeAddress"          (string, optional, default pool address) The unite address to receive the change
+     "changeAddress"          (string, optional, default pool address) The Unit-e address to receive the change
      "changePosition"         (numeric, optional, default random) The index of the change output
      "change_type"            (string, optional) The output type to use. Only valid if changeAddress is not specified. Options are "legacy", "p2sh-segwit", and "bech32". Default is set by -changetype.
      "includeWatching"        (boolean, optional, default false) Also select inputs which are watch only
@@ -86,19 +86,22 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Create a transaction with no inputs::
 
-  unite-cli createrawtransaction "[]" "{\"myaddress\":0.01}"
+  unit-e-cli createrawtransaction "[]" "{\"myaddress\":0.01}"
 
 Add sufficient unsigned inputs to meet the output value::
 
-  unite-cli fundrawtransaction "rawtransactionhex"
+  unit-e-cli fundrawtransaction "rawtransactionhex"
 
 Sign the transaction::
 
-  unite-cli signrawtransaction "fundedtransactionhex"
+  unit-e-cli signrawtransaction "fundedtransactionhex"
 
 Send the transaction::
 
-  unite-cli sendrawtransaction "signedtransactionhex"
+  unit-e-cli sendrawtransaction "signedtransactionhex"
 

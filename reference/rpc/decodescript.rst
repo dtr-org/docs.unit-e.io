@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -27,7 +27,7 @@ Result
     "type":"type", (string) The output type
     "reqSigs": n,    (numeric) The required signatures
     "addresses": [   (json array of string)
-       "address"     (string) unite address
+       "address"     (string) Unit-e address
        ,...
     ],
     "p2sh","address" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).
@@ -36,9 +36,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli decodescript "hexstring"
+  unit-e-cli decodescript "hexstring"
 
 ::
 

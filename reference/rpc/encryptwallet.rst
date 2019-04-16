@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -28,21 +28,24 @@ The pass phrase to encrypt the wallet with. It must be at least 1 character, but
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Encrypt your wallet::
 
-  unite-cli encryptwallet "my pass phrase"
+  unit-e-cli encryptwallet "my pass phrase"
 
 Now set the passphrase to use the wallet, such as for signing or sending unite::
 
-  unite-cli walletpassphrase "my pass phrase"
+  unit-e-cli walletpassphrase "my pass phrase"
 
 Now we can do something like sign::
 
-  unite-cli signmessage "address" "test message"
+  unit-e-cli signmessage "address" "test message"
 
 Now lock the wallet again by removing the passphrase::
 
-  unite-cli walletlock
+  unit-e-cli walletlock
 
 As a json rpc call::
 

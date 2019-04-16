@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -36,17 +36,20 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 List account balances where there at least 1 confirmation::
 
-  unite-cli listaccounts
+  unit-e-cli listaccounts
 
 List account balances including zero confirmation transactions::
 
-  unite-cli listaccounts 0
+  unit-e-cli listaccounts 0
 
 List account balances for 6 or more confirmations::
 
-  unite-cli listaccounts 6
+  unit-e-cli listaccounts 6
 
 As json rpc call::
 

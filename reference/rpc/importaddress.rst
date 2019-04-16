@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -40,13 +40,16 @@ Add the P2SH version of the script as well
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Import a script with rescan::
 
-  unite-cli importaddress "myscript"
+  unit-e-cli importaddress "myscript"
 
 Import using a label without rescan::
 
-  unite-cli importaddress "myscript" "testing" false
+  unit-e-cli importaddress "myscript" "testing" false
 
 As a JSON-RPC call::
 

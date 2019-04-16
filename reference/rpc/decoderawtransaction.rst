@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -59,7 +59,7 @@ Result
            "reqSigs" : n,            (numeric) The required sigs
            "type" : "pubkeyhash",  (string) The type, eg 'pubkeyhash'
            "addresses" : [           (json array of string)
-             "12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc"   (string) unite address
+             "12tvKAXCxZjSmdNbao16dKXC8tRWfcF5oc"   (string) Unit-e address
              ,...
            ]
          }
@@ -71,9 +71,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli decoderawtransaction "hexstring"
+  unit-e-cli decoderawtransaction "hexstring"
 
 ::
 

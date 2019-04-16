@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -60,13 +60,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Move 0.01 UTE from the default account to the account named tabby::
 
-  unite-cli move "" "tabby" 0.01
+  unit-e-cli move "" "tabby" 0.01
 
 Move 0.01 UTE timotei to akiko with a comment and funds have 6 confirmations::
 
-  unite-cli move "timotei" "akiko" 0.01 6 "happy birthday!"
+  unit-e-cli move "timotei" "akiko" 0.01 6 "happy birthday!"
 
 As a json rpc call::
 

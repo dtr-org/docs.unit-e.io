@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -7,7 +7,7 @@ getaccountaddress
 
 ``getaccountaddress "account"``
 
-DEPRECATED. Returns the current UnitE address for receiving payments to this account.
+DEPRECATED. Returns the current Unit-e address for receiving payments to this account.
 
 Argument #1 - account
 ~~~~~~~~~~~~~~~~~~~~~
@@ -27,22 +27,25 @@ Result
      - Description
    * - address
      - string
-     - The account unite address
+     - The account Unit-e address
 
 Examples
 ~~~~~~~~
 
-::
 
-  unite-cli getaccountaddress
-
-::
-
-  unite-cli getaccountaddress ""
+.. highlight:: shell
 
 ::
 
-  unite-cli getaccountaddress "myaccount"
+  unit-e-cli getaccountaddress
+
+::
+
+  unit-e-cli getaccountaddress ""
+
+::
+
+  unit-e-cli getaccountaddress "myaccount"
 
 ::
 

@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -39,13 +39,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Create the signature::
 
-  unite-cli signmessagewithprivkey "privkey" "my message"
+  unit-e-cli signmessagewithprivkey "privkey" "my message"
 
 Verify the signature::
 
-  unite-cli verifymessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "signature" "my message"
+  unit-e-cli verifymessage "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "signature" "my message"
 
 As json rpc::
 

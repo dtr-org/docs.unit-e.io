@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -7,7 +7,7 @@
 RPC API Reference
 =================
 
-This is the reference for the RPC API calls of Unit-e. Use ``unite-cli`` to run
+This is the reference for the RPC API calls of unit-e. Use ``unit-e-cli`` to run
 the commands.
 
 Blockchain
@@ -104,6 +104,16 @@ Network
   setban
   setnetworkactive
 
+Proposing
+---------
+
+.. toctree::
+  :maxdepth: 1
+
+  liststakeablecoins
+  proposerstatus
+  proposerwake
+
 Rawtransactions
 ---------------
 
@@ -114,6 +124,7 @@ Rawtransactions
   createrawtransaction
   decoderawtransaction
   decodescript
+  extractvotefromsignature
   fundrawtransaction
   getrawtransaction
   sendrawtransaction
@@ -126,11 +137,21 @@ Snapshot
   :maxdepth: 1
 
   calcsnapshothash
-  createsnapshot
   deletesnapshot
   getblocksnapshot
+  getrawsnapshot
   gettipsnapshot
   listsnapshots
+
+Staking
+-------
+
+.. toctree::
+  :maxdepth: 1
+
+  calcstakemodifier
+  tracechain
+  tracestake
 
 Util
 ----
@@ -157,6 +178,7 @@ Wallet
   addressbookinfo
   backupwallet
   bumpfee
+  createvotetransaction
   deposit
   dumpprivkey
   dumpwallet
@@ -206,6 +228,7 @@ Wallet
   setaccount
   settxfee
   signmessage
+  stakeat
   walletlock
   walletpassphrase
   walletpassphrasechange

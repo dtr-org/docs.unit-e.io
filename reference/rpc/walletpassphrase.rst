@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -36,13 +36,16 @@ Unlock the wallet for staking, but not for other operations. Set <timeout> to 0
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Unlock the wallet for 60 seconds::
 
-  unite-cli walletpassphrase "my pass phrase" 60
+  unit-e-cli walletpassphrase "my pass phrase" 60
 
 Lock the wallet again (before 60 seconds)::
 
-  unite-cli walletlock
+  unit-e-cli walletlock
 
 As json rpc call::
 

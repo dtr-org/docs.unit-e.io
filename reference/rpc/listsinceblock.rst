@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -50,7 +50,7 @@ Result
   {
     "transactions": [
       "account":"accountname",       (string) DEPRECATED. The account name associated with the transaction. Will be "" for the default account.
-      "address":"address",    (string) The unite address of the transaction. Not present for move transactions (category = move).
+      "address":"address",    (string) The Unit-e address of the transaction. Not present for move transactions (category = move).
       "category":"send|receive",     (string) The transaction category. 'send' has negative amounts, 'receive' has positive amounts.
       "amount": x.xxx,          (numeric) The amount in UTE. This is negative for the 'send' category, and for the 'move' category for moves
                                             outbound. It is positive for the 'receive' category, and for the 'move' category for inbound funds.
@@ -81,13 +81,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli listsinceblock
+  unit-e-cli listsinceblock
 
 ::
 
-  unite-cli listsinceblock "000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad" 6
+  unit-e-cli listsinceblock "000000000000000bacf66f7497b7dc45ef753ee9a7d38571037cdb1a57f663ad" 6
 
 ::
 

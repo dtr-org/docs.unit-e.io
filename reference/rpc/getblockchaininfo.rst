@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -30,15 +30,6 @@ Result
     "pruneheight": xxxxxx,        (numeric) lowest-height complete block stored (only present if pruning is enabled)
     "automatic_pruning": xx,      (boolean) whether automatic pruning is enabled (only present if pruning is enabled)
     "prune_target_size": xxxxxx,  (numeric) the target size used by pruning (only present if automatic pruning is enabled)
-    "softforks": [                (array) status of softforks in progress
-       {
-          "id": "xxxx",           (string) name of softfork
-          "version": xx,          (numeric) block version
-          "reject": {             (object) progress toward rejecting pre-softfork blocks
-             "status": xx,        (boolean) true if threshold reached
-          },
-       }, ...
-    ],
     "bip9_softforks": {           (object) status of BIP9 softforks in progress
        "xxxx" : {                 (string) name of the softfork
           "status": "xxxx",       (string) one of "defined", "started", "locked_in", "active", "failed"
@@ -61,9 +52,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getblockchaininfo
+  unit-e-cli getblockchaininfo
 
 ::
 

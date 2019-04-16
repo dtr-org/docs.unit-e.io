@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -26,16 +26,26 @@ an optional passphrase to protect the key
 Argument #3 - rescan
 ~~~~~~~~~~~~~~~~~~~~
 
-**Type:** bool, optional
+**Type:** bool, optional, default=true
 
 an optional flag whether to rescan the blockchain
+
+Argument #4 - brand_new
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Type:** bool, optional, default=false
+
+indicates that no transactions in the blockchain have ever used this key
 
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli importmasterkey "next debate force grief bleak want truck prepare theme lecture wear century rich grace someone"
+  unit-e-cli importmasterkey "next debate force grief bleak want truck prepare theme lecture wear century rich grace someone"
 
 ::
 

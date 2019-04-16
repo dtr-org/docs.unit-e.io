@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -46,7 +46,7 @@ Result
     {
       "account":"accountname",       (string) DEPRECATED. The account name associated with the transaction.
                                                   It will be "" for the default account.
-      "address":"address",    (string) The unite address of the transaction. Not present for
+      "address":"address",    (string) The Unit-e address of the transaction. Not present for
                                                   move transactions (category = move).
       "category":"send|receive|move", (string) The transaction category. 'move' is a local (off blockchain)
                                                   transaction between accounts, and not associated with an address,
@@ -86,13 +86,16 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 List the most recent 10 transactions in the systems::
 
-  unite-cli listtransactions
+  unit-e-cli listtransactions
 
 List transactions 100 to 120::
 
-  unite-cli listtransactions "*" 20 100
+  unit-e-cli listtransactions "*" 20 100
 
 As a json rpc call::
 

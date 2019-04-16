@@ -18,7 +18,7 @@ unit_e_path = os.environ.get("UNIT_E_PATH")
 if not unit_e_path:
     sys.exit("UNIT_E_PATH is not set. Exiting.")
 
-unite_cli = Path(unit_e_path) / "src/unite-cli"
+unite_cli = Path(unit_e_path) / "src/unit-e-cli"
 base_dir = (Path(os.path.dirname(__file__)) / "../..").resolve()
 output_dir = base_dir / "reference/rpc"
 template_dir = base_dir / "helpers/rpc_docs/templates"
@@ -97,6 +97,7 @@ def process_command_help(input):
                         result['text'] + '\n'
     if help_data["examples"]:
         output += 'Examples\n~~~~~~~~\n\n'
+        output += '\n.. highlight:: shell\n\n'
         text = ''
         for example_line in help_data['examples']:
             if example_line.startswith('> '):

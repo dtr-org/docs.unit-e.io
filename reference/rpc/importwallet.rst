@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -19,13 +19,16 @@ The wallet file
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 Dump the wallet::
 
-  unite-cli dumpwallet "test"
+  unit-e-cli dumpwallet "test"
 
 Import the wallet::
 
-  unite-cli importwallet "test"
+  unit-e-cli importwallet "test"
 
 Import using the json rpc call::
 

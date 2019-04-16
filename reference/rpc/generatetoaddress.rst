@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -8,6 +8,7 @@ generatetoaddress
 ``generatetoaddress nblocks address (maxtries)``
 
 Mine blocks immediately to a specified address (before the RPC call returns)
+Note: this function can only be used on the regtest network.
 
 Argument #1 - nblocks
 ~~~~~~~~~~~~~~~~~~~~~
@@ -40,5 +41,5 @@ Result
   Examples:
   
   Generate 11 blocks to myaddress
-  > unite-cli generatetoaddress 11 "myaddress"
+  > unit-e-cli generatetoaddress 11 "myaddress"
 

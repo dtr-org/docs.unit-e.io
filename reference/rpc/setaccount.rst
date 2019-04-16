@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -14,7 +14,7 @@ Argument #1 - address
 
 **Type:** string, required
 
-The unite address to be associated with an account.
+The Unit-e address to be associated with an account.
 
 Argument #2 - account
 ~~~~~~~~~~~~~~~~~~~~~
@@ -26,9 +26,12 @@ The account to assign the address to.
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli setaccount "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "tabby"
+  unit-e-cli setaccount "1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XX" "tabby"
 
 ::
 

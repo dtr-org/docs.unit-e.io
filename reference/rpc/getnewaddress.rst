@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -7,7 +7,7 @@ getnewaddress
 
 ``getnewaddress ( "account" "address_type" )``
 
-Returns a new UnitE address for receiving payments.
+Returns a new Unit-e address for receiving payments.
 
 If 'account' is specified (DEPRECATED), it is added to the address book
 so payments received with the address will be credited to 'account'.
@@ -37,14 +37,17 @@ Result
      - Description
    * - address
      - string
-     - The new unite address
+     - The new Unit-e address
 
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli getnewaddress
+  unit-e-cli getnewaddress
 
 ::
 

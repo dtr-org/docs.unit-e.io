@@ -1,4 +1,4 @@
-.. Copyright (c) 2018 The Unit-e developers
+.. Copyright (c) 2018-2019 The Unit-e developers
    Distributed under the MIT software license, see the accompanying
    file LICENSE or https://opensource.org/licenses/MIT.
 
@@ -17,7 +17,7 @@ The arguments are evaluated in order "include", "exclude".
 
 If an item is both included and excluded, it will thus end up being excluded.
 
-The valid logging categories are: net, tor, mempool, http, bench, zmq, db, rpc, estimatefee, addrman, selectcoins, reindex, cmpctblock, rand, prune, proxy, mempoolrej, libevent, coindb, qt, leveldb, validation, proposing, finalization, snapshot, admin
+The valid logging categories are: net, tor, mempool, http, bench, zmq, db, rpc, estimatefee, addrman, selectcoins, reindex, cmpctblock, rand, prune, proxy, mempoolrej, libevent, coindb, leveldb, validation, proposing, finalization, snapshot, admin
 In addition, the following are available as category names with special meanings:
 
   - "all",  "1" : represent all logging categories.
@@ -65,9 +65,12 @@ Result
 Examples
 ~~~~~~~~
 
+
+.. highlight:: shell
+
 ::
 
-  unite-cli logging "[\"all\"]" "[\"http\"]"
+  unit-e-cli logging "[\"all\"]" "[\"http\"]"
 
 ::
 
