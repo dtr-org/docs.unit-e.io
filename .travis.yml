@@ -9,6 +9,7 @@ Defaults: &s3defaults
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: $AWS_BUCKET
+  region: $AWS_REGION
   local-dir: _build/html
   acl: private
   on:
