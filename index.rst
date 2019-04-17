@@ -19,6 +19,7 @@ involved <developer>` as a developer. Enjoy!
    :caption: Contents:
 
    introduction
+   announcements
    testnet
    technical
    developer

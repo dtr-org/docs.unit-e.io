@@ -25,6 +25,9 @@ reference for how everything works together currently is the `source code`_.
 
 If you find any issues please `report them on GitHub`_.
 
+Follow the :ref:`announcements` page for updates such as breaking changes to the
+testnet.
+
 .. _unit-e README: https://github.com/dtr-org/unit-e/blob/master/README.md#running-from-source
 .. _source code: https://github.com/dtr-org/unit-e
 .. _report them on GitHub: https://github.com/dtr-org/unit-e/issues

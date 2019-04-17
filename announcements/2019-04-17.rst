@@ -1,0 +1,22 @@
+Launch of Unit-e Alpha Testnet
+==============================
+
+.. feed-entry::
+   :date: 2019-04-17 17:00
+
+The Unit-e developers team is happy to announce the launch of the Unit-e Alpha
+Testnet. It goes with the first public release of the sources of the `Unit-e C++
+client <https://github.com/dtr-org/unit-e>`_. See the `Unit-e website
+<https://unit-e.io>`_ for more information about the project.
+
+.. cut::
+
+Be aware that this is an initial release and is subject to breaking changes.
+Find more information in the project `README
+<https://github.com/dtr-org/unit-e/blob/master/README.md>`_.
+
+You can participate in the testnet by following the instructions in the
+:ref:`testnet` documentation. The testnet is at an early stage and it will
+gradually be ramped up to provide more features. With the launch you will be
+able to run a node to participate in the network. Facilities to generate testnet
+tokens will be added in the future.
