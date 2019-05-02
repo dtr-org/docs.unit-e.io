@@ -1,0 +1,15 @@
+
+This message is part of the Graphene block propagation protocol as defined in
+UIP-26.
+
+\startformat
+requested block hash
+uint256
+Hash of the block being requested
+
+requester mempool count
+uint64
+Number of transactions in receiver's txpool
+\endformat
+
+\copyright unit-e

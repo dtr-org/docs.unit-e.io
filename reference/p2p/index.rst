@@ -29,9 +29,13 @@ Messages
   getblocktxn
   getcommits
   getdata
+  getgraphene
+  getgraphentx
   getheaders
   getsnapshot
   getsnaphead
+  graphenblock
+  graphenetx
   headers
   inv
   mempool
@@ -58,8 +62,11 @@ Data Types
   types/Address
   types/AddressWithTime
   types/BlockHeader
+  types/BloomFilter
   types/CompactSize
+  types/GrapheneIblt
   types/HeadersAndCommits
+  types/IBLTEntry
   types/Integers
   types/Inv
   types/Outpoint

@@ -1,0 +1,18 @@
+
+This message is part of the Graphene block propagation protocol as defined in
+UIP-26.
+
+Used by the receiver to request any missing transactions after graphene block
+was successfully decoded.
+
+\startformat
+block_hash
+uint256
+Hash of the block being requested
+
+missing_tx_short_hashes
+vector<uint64>
+Set of short tx hashes
+\endformat
+
+\copyright unit-e

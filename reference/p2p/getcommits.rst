@@ -5,7 +5,7 @@
 getcommits
 ----------
 
-Contains a getcommits request as described in ADR-21. Peer should respond with the "commits" message.
+Contains a getcommits request as described in UIP-21. Peer should respond with the "commits" message.
 
 Part of the mechanism to transfer finalizer commits as described in `UIP-21 <https://github.com/dtr-org/uips/blob/master/UIP-0021.md>`__.
 

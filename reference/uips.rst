@@ -19,8 +19,9 @@ Here is the current list of UIPs in Draft or Proposed state:
 * `UIP-0012 <https://github.com/dtr-org/uips/blob/master/UIP-0012.md>`_ - Fork choice rule
 * `UIP-0015 <https://github.com/dtr-org/uips/blob/master/UIP-0015.md>`_ - Remote staking
 * `UIP-0017 <https://github.com/dtr-org/uips/blob/master/UIP-0017.md>`_ - No Nonce or Extra Nonce
-* `UIP-0018 <https://github.com/dtr-org/uips/blob/master/UIP-0018.md>`_ - unit-e Transaction Types
+* `UIP-0018 <https://github.com/dtr-org/uips/blob/master/UIP-0018.md>`_ - Unit-e Transaction Types
 * `UIP-0021 <https://github.com/dtr-org/uips/blob/master/UIP-0021.md>`_ - Transfer Esperanza Transactions
 * `UIP-0024 <https://github.com/dtr-org/uips/blob/master/UIP-0024.md>`_ - CTOR - Canonical Transactions Ordering Rule
+* `UIP-0026 <https://github.com/dtr-org/uips/blob/master/UIP-0026.md>`_ - Graphene - block propagation protocol
 
 .. _UIP-0001: https://github.com/dtr-org/uips/blob/master/UIP-0001.md

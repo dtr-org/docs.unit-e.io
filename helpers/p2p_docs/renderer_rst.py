@@ -137,7 +137,8 @@ class RendererRST:
         if text in ["CompactSize", "BlockHeader", "Transaction", "TxIn",
                     "TxOut", "Outpoint",
                     "OutputMapping", "UTXOSubset", "char", "string", "bool",
-                    "PrefilledTransaction", "Address"]:
+                    "PrefilledTransaction", "Address", "BloomFilter",
+                    "GrapheneIblt"]:
             self.link_targets.add(text)
             return "%s_" % text
         non_types = ["*Varies*", "*None*", "coinbasescript"]
@@ -319,7 +320,7 @@ class RendererRST:
         """
         filename = output_dir / (name + ".rst")
         with filename.open("w") as file:
-            with (Path("doc_data") / (name + ".txt")).open() as data_file:
+            with (Path(__file__).parent / "doc_data" / (name + ".txt")).open() as data_file:
                 doc_data = data_file.read()
             sections = DocParser().parse(doc_data)
             doc_processor = DocProcessor()
@@ -365,9 +366,10 @@ class RendererRST:
         in the commands. It also renders an `intro` file with general
         information about the P2P messages.
         """
-        output_dir = Path("../../reference/p2p/")
+        output_dir = Path(__file__).parent.parent.parent / "reference" / "p2p"
         index_filename = output_dir / "index.rst"
         with index_filename.open("w") as index_file:
+            index_file.write(".. _p2p:\n\n")
             index_file.write("P2P Network Protocol\n")
             index_file.write("=======================\n")
             index_file.write(self.render_toc_header())
@@ -385,7 +387,7 @@ class RendererRST:
 
             index_file.write(self.render_toc_header("Data Types"))
 
-            for type_file in sorted(Path("doc_data/types/").glob("*.txt")):
+            for type_file in sorted((Path(__file__).parent / "doc_data" / "types").glob("*.txt")):
                 type_name = os.path.splitext(type_file.name)[0]
                 index_file.write("  types/" + type_name + "\n")
                 print("Rendering type", type_name)

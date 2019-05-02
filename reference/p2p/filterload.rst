@@ -67,7 +67,7 @@ The actual hash function implementation used is the `32-bit Murmur3 hash functio
 
 The data to be hashed can be any transaction element which the bloom filter can match. See the next subsection for the list of transaction elements checked against the filter. The largest element which can be matched is a script data push of 520 bytes, so the data should never exceed 520 bytes.
 
-The example below from unit-e `bloom.cpp <https://github.com/unite/unite/blob/cbf28c6619fe348a258dfd7d08bdbd2392d07511/src/bloom.cpp#L46>`__ combines all the steps above to create the hash function template. The seed is the first parameter; the data to be hashed is the second parameter. The result is a uint32_t modulo the size of the bit field in bits.
+The example below from unit-e `bloom.cpp <https://github.com/dtr-org/unit-e/blob/74834896848d6fd0fd0b377aed29fae451453097/src/bloom.cpp#L55>`__ combines all the steps above to create the hash function template. The seed is the first parameter; the data to be hashed is the second parameter. The result is a uint32_t modulo the size of the bit field in bits.
 
 .. highlight:: c++
 

@@ -5,7 +5,7 @@
 char
 ----
 
-A character represented as an unsigned 8 bit value. The representation is equivalent to `uint8 <uint8.html>`__.
+A character represented as an unsigned 8 bit value. The representation is equivalent to `uint8 <Integers.html>`__.
 
 Characters are often used as part of variable sized strings as a ``vector<char>`` which is equivalent to `string <string.html>`__ or as part of a fixed size string. This is represented in the form ``char[size]`` where size is the number of characters in the string.
 

@@ -8,9 +8,9 @@ height
 uint32
 Block height where the transaction was included
 
-is_coin_base
+type
 uint8
-Bool indicating if the transaction is a coinbase transaction. 1 for true, 0 for false.
+Type of the transaction
 
 outputs
 vector<OutputMapping>

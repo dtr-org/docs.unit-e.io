@@ -30,7 +30,7 @@ Message could not be decoded. Be careful of "reject" message feedback loops wher
 "block" message
 32
 uint256
-Block is invalid for some reason (invalid proof-of-work, invalid signature, etc). Extra data may include the rejected block’s header hash.
+Block is invalid for some reason (invalid proof-of-stake, invalid signature, etc). Extra data may include the rejected block’s header hash.
 
 0x10
 "tx" message

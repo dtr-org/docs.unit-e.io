@@ -1,0 +1,16 @@
+
+\startformat
+count
+CompactSize
+How many times key hash resolved to this bucket
+
+key sum
+uint64
+Xor of all keys for this bucket
+
+key check
+uint32
+Xor of all key checksums
+\endformat
+
+\copyright unit-e

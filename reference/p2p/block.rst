@@ -11,7 +11,7 @@ The block message transmits a single serialized block.
 +--------------+------------------------+----------+--------------------+
 | Name         | Data Type              | Bytes    | Description        |
 +==============+========================+==========+====================+
-| block header | BlockHeader_           | 80       | Block header       |
+| block header | BlockHeader_           | 140      | Block header       |
 +--------------+------------------------+----------+--------------------+
 | transactions | vector_\<Transaction_> | *Varies* | Block transactions |
 +--------------+------------------------+----------+--------------------+

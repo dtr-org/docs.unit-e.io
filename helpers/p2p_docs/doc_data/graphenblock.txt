@@ -1,0 +1,28 @@
+
+This message is part of the Graphene block propagation protocol as defined in
+UIP-26.
+
+\startformat
+header
+BlockHeader
+Block header
+
+nonce
+uint64
+Nonce used for computing short tx hashes
+
+bloom filter
+BloomFilter
+Bloom filter
+
+IBLT
+GrapheneIblt
+Invertible bloom lookup table
+
+prefilled transactions
+vector<Transaction>
+Transactions the sender expect the receiver to not be aware of
+
+\endformat
+
+\copyright unit-e

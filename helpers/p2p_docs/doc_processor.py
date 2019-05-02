@@ -64,7 +64,8 @@ class DocProcessor:
         if data_type == "char" or data_type == "bool":
             return "1"
         if data_type in ["CompactSize", "*Varies*", "string", "TxOut",
-                         "Transaction", "coinbasescript", "*None*"] or data_type.startswith("vector<"):
+                         "Transaction", "coinbasescript", "BloomFilter",
+                         "GrapheneIblt", "*None*"] or data_type.startswith("vector<"):
             return "*Varies*"
         int_match = re.match(r"^u?int(\d+)$", data_type)
         if int_match:
@@ -77,7 +78,7 @@ class DocProcessor:
             else:
                 return size
         if data_type == "BlockHeader":
-            return "80"
+            return "140"
         if data_type == "Address":
             return "26"
         if data_type == "Outpoint":

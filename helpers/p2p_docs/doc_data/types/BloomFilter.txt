@@ -1,0 +1,21 @@
+
+\startformat
+data
+vector<uint8>
+Filter data
+
+hash_funcs
+uint32
+Number of hash functions
+
+tweak
+uint32
+Constant added to the seed value passed to the hash function
+
+flags
+uint8
+Flags
+
+\endformat
+
+\copyright unit-e

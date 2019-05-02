@@ -1,0 +1,12 @@
+
+\startformat
+hash table
+vector<IBLTEntry>
+List of hash table entries
+
+num hashes
+uint8
+Number of hash functions
+\endformat
+
+\copyright unit-e

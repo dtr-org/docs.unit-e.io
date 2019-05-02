@@ -5,7 +5,7 @@
 commits
 -------
 
-Contains commits message as described in ADR-21. Sent in respose to a "getcommits" message.
+Contains commits message as described in UIP-21. Sent in respose to a "getcommits" message.
 
 Part of the mechanism to transfer finalizer commits as described in `UIP-21 <https://github.com/dtr-org/uips/blob/master/UIP-0021.md>`__.
 
