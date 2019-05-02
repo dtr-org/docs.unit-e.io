@@ -24,11 +24,17 @@ Argument #3 - outputs
 
 **Type:** json, required
 
-Array of output objects
-       3.1 "address"    (string, required) The Unit-e address to send to.
-       3.2 "amount"     (numeric or string, required) The amount in UTE to send. eg 0.1
-       3.x "subfee"     (boolean, optional, default=false) The fee will be deducted from the amount being sent.
-       3.x "script"     (string, optional) Hex encoded script, will override the address.
+::
+
+  [                  (Array of output objects)
+    {
+      "address": "<address>", (string, required) The Unit-e address to send to.
+      "amount": x.xxx,        (numeric or string, required) The amount in UTE to send. eg 0.1
+      "subfee": b,            (boolean, optional, default=false) The fee will be deducted from the amount being sent.
+      "script": "<script>"    (string, optional) Hex encoded script, will override the address.
+    }
+    ,...
+  ]
 
 Argument #4 - comment
 ~~~~~~~~~~~~~~~~~~~~~
@@ -60,19 +66,24 @@ Argument #7 - coin_control
 **Type:** json, optional
 
 Coincontrol object.
-       7.1 "changeaddress"  (string, optional) The Address for receiving change
-       7.2 "inputs"         (json, optional) 
-       [{"tx":, "n":},...],
-       7.3 "replaceable"    (boolean, optional)  Allow this transaction to be replaced by a transaction
-       with higher fees via BIP 125
-       7.4 "conf_target"    (numeric, optional) Confirmation target (in blocks)
-       7.5 "estimate_mode"  (string, optional) The fee estimate mode, must be one of:
-       "UNSET"
-       "ECONOMICAL"
-       "CONSERVATIVE"
-       7.6 "fee_rate"        (numeric, optional, default not set: makes wallet determine the fee) Set a specific 
-       feerate (UTE per KB)
-       7.7 "ignore_remote_staked" (boolean, opional, default=false) Exclude coins that are currently staked on other nodes.
+
+::
+
+  {
+    "changeaddress": "<address>", (string, optional) The Address for receiving change
+    "inputs":                     (json, optional)
+           [{"tx":, "n":},...],
+    "replaceable": b,             (boolean, optional)  Allow this transaction to be replaced by a transaction
+                                  with higher fees via BIP 125
+    "conf_target": n,             (numeric, optional) Confirmation target (in blocks)
+    "estimate_mode": "xxx",       (string, optional) The fee estimate mode, must be one of:
+            "UNSET"
+            "ECONOMICAL"
+            "CONSERVATIVE"
+    "fee_rate": n,                (numeric, optional, default not set: makes wallet determine the fee) Set a specific
+                                  feerate (UTE per KB)
+    "ignore_remote_staked": b     (boolean, optional, default=false) Exclude coins that are currently staked on other nodes.
+  }
 
 Result
 ~~~~~~

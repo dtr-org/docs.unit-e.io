@@ -15,9 +15,13 @@ Argument #1 - recipient
 
 **Type:** json, required
 
-1.1 "address"    (string, required) The Unit-e address to send to.
-       1.2 "amount"     (numeric or string, required) The amount in UTE to send, e.g. 0.1
-       1.3 "subfee"     (boolean, optional, default=false) Deduct the fee from the amount being sent.
+::
+
+  {
+    "address": "address", (string, required) The Unit-e address to send to.
+    "amount": x.xxx,      (numeric or string, required) The amount in UTE to send, e.g. 0.1
+    "subfee": b           (boolean, optional, default=false) Deduct the fee from the amount being sent.
+  }
 
 Argument #2 - test_fee
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -32,19 +36,24 @@ Argument #3 - coin_control
 **Type:** json, optional
 
 Coincontrol object.
-       3.1 "changeaddress"  (string, optional) The Address for receiving change
-       3.2 "inputs"         (json, optional) 
+
+::
+
+  {
+    "changeaddress": "address", (string, optional) The Address for receiving change
+    "inputs":                   (json, optional)
        [{"tx":, "n":},...],
-       3.3 "replaceable"    (boolean, optional)  Allow this transaction to be replaced by a transaction
-       with higher fees via BIP 125
-       3.4 "conf_target"    (numeric, optional) Confirmation target (in blocks)
-       3.5 "estimate_mode"  (string, optional) The fee estimate mode, must be one of:
-       "UNSET"
-       "ECONOMICAL"
-       "CONSERVATIVE"
-       3.6 "fee_rate"        (numeric, optional, default not set: makes wallet determine the fee) Set a specific 
-       feerate (UTE per KB)
-       7.7 "ignore_remote_staked" (boolean, opional, default=false) Exclude coins that are currently staked on other nodes.
+    "replaceable": b,           (boolean, optional)  Allow this transaction to be replaced by a transaction
+                                with higher fees via BIP 125
+    "conf_target": n,           (numeric, optional) Confirmation target (in blocks)
+    "estimate_mode": "xxx",     (string, optional) The fee estimate mode, must be one of:
+        "UNSET"
+        "ECONOMICAL"
+        "CONSERVATIVE"
+    "fee_rate": n,              (numeric, optional, default not set: makes wallet determine the fee) Set a specific
+                                feerate (UTE per KB)
+    "ignore_remote_staked": b   (boolean, optional, default=false) Exclude coins that are currently staked on other nodes.
+  }
 
 Result
 ~~~~~~

@@ -37,9 +37,10 @@ Result (for verbose = true)
     "version" : n,         (numeric) The block version
     "versionHex" : "00000000", (string) The block version formatted in hexadecimal
     "merkleroot" : "xxxx", (string) The merkle root
+    "witnessmerkleroot" : "xxxx", (string) The witness merkle root
+    "finalizercommitsmerkleroot" : "xxxx", (string) The finalizer commits merkle root
     "time" : ttt,          (numeric) The block time in seconds since epoch (Jan 1 1970 GMT)
     "mediantime" : ttt,    (numeric) The median block time in seconds since epoch (Jan 1 1970 GMT)
-    "nonce" : n,           (numeric) The nonce
     "bits" : "1d00ffff", (string) The bits
     "difficulty" : x.xxx,  (numeric) The difficulty
     "chainwork" : "0000...1f3"     (string) Expected number of hashes required to produce the current chain (in hex)
