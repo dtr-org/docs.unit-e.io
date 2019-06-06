@@ -13,4 +13,5 @@ Announcements
    :description: Unit-e testnet updates
    :link: https://docs.unit-e.io/
 
+   announcements/2019-06-06
    announcements/2019-04-17

@@ -1,0 +1,23 @@
+Update of Unit-e Alpha Testnet
+==============================
+
+.. feed-entry::
+   :date: 2019-06-06 15:00
+
+On June 7 2019 there will be a reset of the alpha testnet as part of a
+scheduled maintenance update after running it for more than half a million
+blocks. The update will bring the nodes run by the Unit-e development team to
+the latest version of the code and start a fresh blockchain.
+
+.. cut::
+
+The update contains some changes which are not compatible with older versions,
+in particular the 0.1.0 version. If you have been running a node paticipating in
+the testnet you need to check out the latest version of the `testnet` branch and
+recompile your client. Remove the unit-e data directory before starting the
+client to get the new testnet blockchain.
+
+See the :ref:`testnet` documentation for general instructions how to participate
+in the testnet. The testnet still is at an early stage. It will gradually be
+ramped up to provide more features and might be reset to incorporate changes
+which are not backwards compatible in the future as well.
